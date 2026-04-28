@@ -29,6 +29,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-steel: var(--steel);
+  --color-brand-green: var(--brand-green);
+  --color-brand-red: var(--brand-red);
   --font-display: "Oswald", "Impact", system-ui, sans-serif;
   --font-sans: "Inter", system-ui, sans-serif;
   --shadow-industrial: 0 20px 60px -20px oklch(0 0 0 / 0.6);
@@ -49,13 +51,13 @@
   /* Primary = bold red */
   --primary: oklch(0.55 0.22 27);
   --primary-foreground: oklch(1 0 0);
-  /* Secondary = vibrant green (co-primary brand color) */
-  --secondary: oklch(0.5 0.17 145);
+  /* Secondary = deep black surface */
+  --secondary: oklch(0.12 0 0);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.4 0 0);
-  /* Accent = green tint for highlights */
-  --accent: oklch(0.5 0.17 145);
+  /* Accent = vibrant green (co-primary brand color) */
+  --accent: oklch(0.55 0.17 145);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.55 0.22 27);
   --destructive-foreground: oklch(1 0 0);
@@ -63,6 +65,9 @@
   --input: oklch(0.94 0 0);
   --ring: oklch(0.55 0.22 27);
   --steel: oklch(0.3 0 0);
+  /* Brand colors — red and green featured equally */
+  --brand-red: oklch(0.55 0.22 27);
+  --brand-green: oklch(0.55 0.17 145);
 }
 
 .dark {
@@ -74,12 +79,14 @@
   --popover-foreground: oklch(0.98 0 0);
   --primary: oklch(0.6 0.23 27);
   --primary-foreground: oklch(1 0 0);
-  --secondary: oklch(0.55 0.18 145);
-  --secondary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.18 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.55 0.18 145);
+  --accent: oklch(0.6 0.18 145);
   --accent-foreground: oklch(1 0 0);
+  --brand-red: oklch(0.6 0.23 27);
+  --brand-green: oklch(0.6 0.18 145);
   --border: oklch(1 0 0 / 0.1);
   --input: oklch(1 0 0 / 0.15);
   --ring: oklch(0.78 0.18 75);
