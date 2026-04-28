@@ -34,7 +34,7 @@ export function Navbar() {
             T
           </div>
           <div className="font-display text-xl text-secondary-foreground tracking-wider">
-            TRGOIMPEX <span className="text-primary">W</span>
+            <span className="text-primary">TRGO</span><span className="text-brand-green">IMPEX</span> W
           </div>
         </a>
 

@@ -32,9 +32,8 @@ export function Hero() {
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-secondary-foreground leading-[0.95] mb-6">
             Gradimo
             <br />
-            <span className="text-primary">temelje</span>
-            <br />
-            budućnosti.
+            <span className="text-primary">temelje</span>{" "}
+            <span className="text-brand-green">budućnosti</span>.
           </h1>
 
           <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-10 leading-relaxed">
@@ -52,7 +51,7 @@ export function Hero() {
             </a>
             <a
               href="#projekti"
-              className="inline-flex items-center gap-3 border-2 border-secondary-foreground/30 text-secondary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:border-primary hover:text-primary transition-smooth"
+              className="inline-flex items-center gap-3 bg-brand-green text-white px-8 py-4 font-display uppercase tracking-wider text-sm hover:opacity-90 transition-smooth"
             >
               Naši projekti
             </a>
@@ -66,9 +65,9 @@ export function Hero() {
             { n: "180+", l: "Završenih projekata" },
             { n: "50+", l: "Stručnih radnika" },
             { n: "100%", l: "Posvećenost" },
-          ].map((s) => (
+          ].map((s, i) => (
             <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6">
-              <div className="font-display text-3xl md:text-4xl text-primary">
+              <div className={`font-display text-3xl md:text-4xl ${i % 2 === 0 ? "text-primary" : "text-brand-green"}`}>
                 {s.n}
               </div>
               <div className="text-secondary-foreground/70 text-xs uppercase tracking-wider mt-1">
