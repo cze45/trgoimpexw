@@ -17,8 +17,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 bg-secondary/60" />
 
-      {/* Diagonal accent stripe */}
-      <div className="absolute top-0 right-0 w-2 md:w-4 h-full diagonal-stripes opacity-80" />
+      {/* Subtle accent line */}
+      <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
         <div className="max-w-3xl">
