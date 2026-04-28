@@ -123,10 +123,10 @@
   .diagonal-stripes {
     background-image: repeating-linear-gradient(
       45deg,
-      var(--color-primary),
-      var(--color-primary) 12px,
-      var(--color-secondary) 12px,
-      var(--color-secondary) 24px
+      var(--color-brand-red),
+      var(--color-brand-red) 12px,
+      var(--color-brand-green) 12px,
+      var(--color-brand-green) 24px
     );
   }
 
