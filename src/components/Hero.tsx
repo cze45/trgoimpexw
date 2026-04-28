@@ -32,8 +32,7 @@ export function Hero() {
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-secondary-foreground leading-[0.95] mb-6">
             Gradimo
             <br />
-            <span className="text-primary">temelje</span>{" "}
-            <span className="text-brand-green">budućnosti</span>.
+            temelje budućnosti<span className="text-brand-red">.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-10 leading-relaxed">
@@ -51,7 +50,7 @@ export function Hero() {
             </a>
             <a
               href="#projekti"
-              className="inline-flex items-center gap-3 bg-brand-green text-white px-8 py-4 font-display uppercase tracking-wider text-sm hover:opacity-90 transition-smooth"
+              className="inline-flex items-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:bg-secondary-foreground hover:text-secondary transition-smooth"
             >
               Naši projekti
             </a>
@@ -59,20 +58,21 @@ export function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-primary/20 border border-primary/20 max-w-4xl">
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl">
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
             { n: "50+", l: "Stručnih radnika" },
             { n: "100%", l: "Posvećenost" },
-          ].map((s, i) => (
-            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6">
-              <div className={`font-display text-3xl md:text-4xl ${i % 2 === 0 ? "text-primary" : "text-brand-green"}`}>
+          ].map((s) => (
+            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6 relative">
+              <div className="font-display text-3xl md:text-4xl text-secondary-foreground">
                 {s.n}
               </div>
               <div className="text-secondary-foreground/70 text-xs uppercase tracking-wider mt-1">
                 {s.l}
               </div>
+              <span className="absolute top-3 right-3 w-1.5 h-1.5 bg-brand-green" />
             </div>
           ))}
         </div>

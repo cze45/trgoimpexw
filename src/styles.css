@@ -48,26 +48,26 @@
   --card-foreground: oklch(0.1 0 0);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.1 0 0);
-  /* Primary = bold red */
-  --primary: oklch(0.55 0.22 27);
+  /* Primary = black (main UI color). Red & green reserved for tiny accents only. */
+  --primary: oklch(0.12 0 0);
   --primary-foreground: oklch(1 0 0);
   /* Secondary = deep black surface */
   --secondary: oklch(0.12 0 0);
   --secondary-foreground: oklch(1 0 0);
   --muted: oklch(0.96 0 0);
   --muted-foreground: oklch(0.4 0 0);
-  /* Accent = vibrant green (co-primary brand color) */
-  --accent: oklch(0.55 0.17 145);
+  /* Accent = darker green */
+  --accent: oklch(0.4 0.13 145);
   --accent-foreground: oklch(1 0 0);
-  --destructive: oklch(0.55 0.22 27);
+  --destructive: oklch(0.5 0.22 27);
   --destructive-foreground: oklch(1 0 0);
   --border: oklch(0.9 0 0);
   --input: oklch(0.94 0 0);
-  --ring: oklch(0.55 0.22 27);
+  --ring: oklch(0.12 0 0);
   --steel: oklch(0.3 0 0);
-  /* Brand colors — red and green featured equally */
-  --brand-red: oklch(0.55 0.22 27);
-  --brand-green: oklch(0.55 0.17 145);
+  /* Brand accent colors — used sparingly for small details */
+  --brand-red: oklch(0.5 0.22 27);
+  --brand-green: oklch(0.38 0.13 145);
 }
 
 .dark {
@@ -77,19 +77,19 @@
   --card-foreground: oklch(0.98 0 0);
   --popover: oklch(0.14 0 0);
   --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.6 0.23 27);
-  --primary-foreground: oklch(1 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.1 0 0);
   --secondary: oklch(0.18 0 0);
   --secondary-foreground: oklch(0.98 0 0);
   --muted: oklch(0.18 0 0);
   --muted-foreground: oklch(0.7 0 0);
-  --accent: oklch(0.6 0.18 145);
+  --accent: oklch(0.45 0.14 145);
   --accent-foreground: oklch(1 0 0);
-  --brand-red: oklch(0.6 0.23 27);
-  --brand-green: oklch(0.6 0.18 145);
+  --brand-red: oklch(0.55 0.22 27);
+  --brand-green: oklch(0.45 0.14 145);
   --border: oklch(1 0 0 / 0.1);
   --input: oklch(1 0 0 / 0.15);
-  --ring: oklch(0.78 0.18 75);
+  --ring: oklch(0.98 0 0);
 }
 
 @layer base {
