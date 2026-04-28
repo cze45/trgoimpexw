@@ -17,8 +17,8 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-hero" />
       <div className="absolute inset-0 bg-secondary/60" />
 
-      {/* Diagonal accent stripe */}
-      <div className="absolute top-0 right-0 w-2 md:w-4 h-full diagonal-stripes opacity-80" />
+      {/* Subtle accent line */}
+      <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
         <div className="max-w-3xl">
@@ -58,21 +58,21 @@ export function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl">
+        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl">
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
             { n: "50+", l: "Stručnih radnika" },
             { n: "100%", l: "Posvećenost" },
           ].map((s) => (
-            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6 relative">
-              <div className="font-display text-3xl md:text-4xl text-secondary-foreground">
+            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-4 md:p-6 relative min-w-0">
+              <div className="font-display text-2xl md:text-4xl text-secondary-foreground leading-none">
                 {s.n}
               </div>
-              <div className="text-secondary-foreground/70 text-xs uppercase tracking-wider mt-1">
+              <div className="text-secondary-foreground/70 text-[10px] md:text-xs uppercase tracking-wider mt-2 leading-tight break-words">
                 {s.l}
               </div>
-              <span className="absolute top-3 right-3 w-1.5 h-1.5 bg-brand-green" />
+              <span className="absolute top-2 right-2 md:top-3 md:right-3 w-1.5 h-1.5 bg-brand-green" />
             </div>
           ))}
         </div>
