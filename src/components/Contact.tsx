@@ -95,12 +95,17 @@ function Field({
   name: string;
   type?: string;
 }) {
+  const id = `contact-${name}`;
   return (
     <div>
-      <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+      <label
+        htmlFor={id}
+        className="block text-xs uppercase tracking-widest text-muted-foreground mb-2"
+      >
         {label}
       </label>
       <input
+        id={id}
         type={type}
         name={name}
         required
