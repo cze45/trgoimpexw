@@ -58,10 +58,14 @@ export function Contact() {
             <Field label="Email" name="email" type="email" />
             <Field label="Vrsta projekta" name="project" />
             <div>
-              <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+              <label
+                htmlFor="contact-message"
+                className="block text-xs uppercase tracking-widest text-muted-foreground mb-2"
+              >
                 Poruka
               </label>
               <textarea
+                id="contact-message"
                 name="message"
                 rows={5}
                 required
@@ -91,12 +95,17 @@ function Field({
   name: string;
   type?: string;
 }) {
+  const id = `contact-${name}`;
   return (
     <div>
-      <label className="block text-xs uppercase tracking-widest text-muted-foreground mb-2">
+      <label
+        htmlFor={id}
+        className="block text-xs uppercase tracking-widest text-muted-foreground mb-2"
+      >
         {label}
       </label>
       <input
+        id={id}
         type={type}
         name={name}
         required

@@ -21,6 +21,30 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering.",
       },
+      { property: "og:url", content: "https://trgoimpexw.lovable.app/" },
+    ],
+    links: [{ rel: "canonical", href: "https://trgoimpexw.lovable.app/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Trgoimpex W",
+          description:
+            "Građevinska kompanija specijalizovana za niskogradnju, visokogradnju i infrastrukturne radove.",
+          url: "https://trgoimpexw.lovable.app/",
+          telephone: "+387 00 000 000",
+          email: "info@trgoimpex-w.ba",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Industrijska zona bb",
+            addressCountry: "BA",
+          },
+          areaServed: "Bosna i Hercegovina",
+          knowsAbout: ["Niskogradnja", "Visokogradnja", "Infrastruktura", "Inženjering"],
+        }),
+      },
     ],
   }),
   component: Index,

@@ -29,10 +29,15 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-secondary-foreground leading-[0.95] mb-6">
-            Gradimo
-            <br />
-            temelje budućnosti<span className="text-brand-red">.</span>
+          <h1 className="font-display text-secondary-foreground leading-[0.95] mb-6">
+            <span className="block text-2xl md:text-3xl mb-2 tracking-wide">
+              Trgoimpex W — građevinska kompanija za niskogradnju i visokogradnju
+            </span>
+            <span className="block text-5xl md:text-7xl lg:text-8xl">
+              Gradimo
+              <br />
+              temelje budućnosti<span className="text-brand-red">.</span>
+            </span>
           </h1>
 
           <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-10 leading-relaxed">

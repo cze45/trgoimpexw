@@ -29,14 +29,22 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Trgoimpex W — Građevinska kompanija" },
+      {
+        name: "description",
+        content:
+          "Trgoimpex W — građevinska kompanija za niskogradnju, visokogradnju i infrastrukturne radove.",
+      },
+      { name: "author", content: "Trgoimpex W" },
+      { property: "og:site_name", content: "Trgoimpex W" },
+      { property: "og:title", content: "Trgoimpex W — Građevinska kompanija" },
+      {
+        property: "og:description",
+        content:
+          "Niskogradnja, visokogradnja i infrastruktura — pouzdanost, preciznost i kvalitet u svakom projektu.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
