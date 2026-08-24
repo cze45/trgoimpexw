@@ -4,7 +4,7 @@ const points = [
   "Tim iskusnih građevinskih inženjera",
   "Sertifikovana mehanizacija i oprema",
   "Poštovanje rokova i budžeta",
-  "Stroge mjere zaštite na radu",
+  "Stroge mere zaštite na radu",
 ];
 
 export function About() {
@@ -15,12 +15,12 @@ export function About() {
           <div className="aspect-square bg-secondary relative overflow-hidden shadow-industrial">
             <div className="absolute inset-0 diagonal-stripes opacity-100" />
             <div className="absolute inset-4 bg-secondary flex flex-col items-center justify-center text-center p-8">
-              <div className="font-display text-8xl md:text-9xl text-primary leading-none">
+              <div className="font-display text-8xl md:text-9xl text-secondary-foreground leading-none">
                 25+
               </div>
               <div className="text-secondary-foreground uppercase tracking-widest mt-4 text-sm">
                 Godina gradimo
-                <br />povjerenje
+                <br />poverenje
               </div>
             </div>
           </div>
@@ -38,7 +38,7 @@ export function About() {
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Više od četvrt vijeka <span className="text-primary">gradimo</span> zajednicu.
+            Više od četvrt veka <span className="text-primary">gradimo</span> zajednicu.
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska kompanija osnovana sa misijom da pruža
@@ -47,7 +47,7 @@ export function About() {
             operativci sa decenijskim iskustvom.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Vjerujemo da se reputacija gradi kao i objekti — sloj po sloj, projekat po
+            Verujemo da se reputacija gradi kao i objekti — sloj po sloj, projekat po
             projekat. Zato svakom poslu pristupamo s istom posvećenošću, bez obzira na
             obim.
           </p>

@@ -36,7 +36,7 @@ export function Projects() {
               </span>
             </div>
             <h2 className="font-display text-4xl md:text-6xl mb-4">
-              Odabrani <span className="text-primary">projekti</span>
+              Odabrani <span className="text-brand-green">projekti</span>
             </h2>
             <p className="text-secondary-foreground/70 text-lg">
               Svaki projekat je dokaz našeg kvaliteta i posvećenosti detaljima.
