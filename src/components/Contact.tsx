@@ -13,7 +13,7 @@ export function Contact() {
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-6xl mb-6">
-            Imate <span className="text-primary">projekat</span>?
+            Imate <span className="text-brand-green">projekat</span>?
             <br />Razgovarajmo.
           </h2>
           <p className="text-secondary-foreground/70 text-lg mb-10 max-w-md">

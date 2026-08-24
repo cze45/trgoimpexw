@@ -48,7 +48,7 @@ export function Services() {
             Naše <span className="text-primary">usluge</span>
           </h2>
           <p className="text-muted-foreground text-lg">
-            Pružamo kompletna rješenja u građevinarstvu — od planiranja do realizacije.
+            Pružamo kompletna rešenja u građevinarstvu — od planiranja do realizacije.
           </p>
         </div>
 
