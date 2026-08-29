@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import logoMain from "@/assets/logo-main.png";
+import logoIcon from "@/assets/logo-icon.png";
 
 const links = [
   { href: "#pocetna", label: "Početna" },
