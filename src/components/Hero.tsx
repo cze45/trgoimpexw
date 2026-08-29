@@ -25,14 +25,12 @@ export function Hero() {
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 border-l-4 border-primary bg-secondary/40 backdrop-blur-sm">
             <span className="w-2 h-2 bg-primary animate-pulse" />
             <span className="text-secondary-foreground text-sm uppercase tracking-widest">
-              Niskogradnja • Visokogradnja • Infrastruktura
+              Niskogradnja • Ogradjivanje • Asfaltiranje
             </span>
           </div>
 
           <h1 className="font-display text-secondary-foreground leading-tight mb-6">
-            <span className="block text-2xl md:text-3xl mb-2 tracking-wide">
-              Trgoimpex W — građevinska kompanija za niskogradnju i visokogradnju
-            </span>
+            
             <span className="block text-5xl md:text-7xl lg:text-8xl leading-[1.05]">
               Gradimo
               <br />
@@ -40,10 +38,7 @@ export function Hero() {
             </span>
           </h1>
 
-          <p className="text-lg md:text-xl text-secondary-foreground/80 max-w-xl mb-10 leading-relaxed">
-            Trgoimpex W je građevinska kompanija specijalizovana za građevinarstvo
-            i niskogradnju. Pouzdanost, preciznost i kvalitet u svakom projektu.
-          </p>
+         
 
           <div className="flex flex-wrap gap-4">
             <a
@@ -67,7 +62,7 @@ export function Hero() {
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
-            { n: "50+", l: "Stručnih radnika" },
+            { n: "15+", l: "Stručnih radnika" },
             { n: "100%", l: "Posvećenost" },
           ].map((s) => (
             <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-4 md:p-6 relative min-w-0">

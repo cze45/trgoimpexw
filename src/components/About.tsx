@@ -39,7 +39,7 @@ export function About() {
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska kompanija osnovana sa misijom da pruža
             vrhunski kvalitet u svim segmentima građevinarstva. Specijalizovani smo za
-            niskogradnju i visokogradnju, a naš tim čine iskusni inženjeri, majstori i
+            niskogradnju, ogradjivanje i asfaltiranje, a naš tim čine iskusni inženjeri, majstori i
             operativci sa decenijskim iskustvom.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8">

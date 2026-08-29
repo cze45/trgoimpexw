@@ -30,7 +30,7 @@ export function Projects() {
         <div className="flex flex-wrap items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-1 bg-primary" />
+              <div className="w-12 h-1 bg-white" />
               <span className="text-sm uppercase tracking-widest text-secondary-foreground/60">
                 Naš rad
               </span>
