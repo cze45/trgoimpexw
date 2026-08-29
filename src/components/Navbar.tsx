@@ -30,12 +30,17 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-20">
         <a href="#pocetna" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 bg-primary flex items-center justify-center font-display text-2xl text-primary-foreground group-hover:rotate-3 transition-smooth">
-            T
-          </div>
-          <div className="font-display text-xl text-secondary-foreground tracking-wider">
-            TRGOIMPEX <span className="text-brand-red">W</span>
-          </div>
+          <img
+            src={logoIcon}
+            alt="Trgoimpex W ikonica"
+            className="h-11 w-11 object-contain group-hover:rotate-3 transition-smooth"
+          />
+          <img
+            src={logoMain}
+            alt="Trgoimpex W logotip"
+            className="hidden sm:block h-10 w-auto object-contain"
+          />
+          <span className="sr-only">Trgoimpex W</span>
         </a>
 
         <nav className="hidden md:flex items-center gap-8">
