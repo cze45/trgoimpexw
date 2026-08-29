@@ -23,9 +23,9 @@ export function Contact() {
 
           <div className="space-y-6">
             {[
-              { icon: MapPin, label: "Adresa", value: "Industrijska zona bb, BiH" },
-              { icon: Phone, label: "Telefon", value: "+387 00 000 000" },
-              { icon: Mail, label: "Email", value: "info@trgoimpex-w.ba" },
+              { icon: MapPin, label: "Adresa", value: "Titelska 5 Novi Sad, Srbija" },
+              { icon: Phone, label: "Telefon", value: "+381 63 504 857" },
+              { icon: Mail, label: "Email", value: "trgoimpexw@gmail.com" },
             ].map((c) => (
               <div key={c.label} className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
