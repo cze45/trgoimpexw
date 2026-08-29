@@ -31,16 +31,16 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-20">
-        <a href="#pocetna" className="flex items-center gap-3 group">
+        <a href="#pocetna" className="flex items-center group">
           <img
             src={logoIcon}
             alt="Trgoimpex W ikonica"
-            className="h-11 w-11 object-contain group-hover:rotate-3 transition-smooth"
+            className="sm:hidden h-12 w-12 object-contain group-hover:rotate-3 transition-smooth"
           />
           <img
             src={logoMain}
             alt="Trgoimpex W logotip"
-            className="hidden sm:block h-10 w-auto object-contain"
+            className="hidden sm:block h-14 w-auto object-contain group-hover:scale-[1.03] transition-smooth"
           />
           <span className="sr-only">Trgoimpex W</span>
         </a>
