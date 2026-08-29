@@ -24,10 +24,6 @@ export function About() {
               </div>
             </div>
           </div>
-          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary hidden md:flex flex-col items-center justify-center text-primary-foreground">
-            <span className="font-display text-3xl">EST</span>
-            <span className="font-display text-2xl">2000</span>
-          </div>
         </div>
 
         <div>
