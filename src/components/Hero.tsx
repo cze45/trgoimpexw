@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 border-l-4 border-primary bg-secondary/40 backdrop-blur-sm">
             <span className="w-2 h-2 bg-primary animate-pulse" />
             <span className="text-secondary-foreground text-sm uppercase tracking-widest">
@@ -40,7 +40,7 @@ export function Hero() {
 
          
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#kontakt"
               className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth"
@@ -58,7 +58,7 @@ export function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl">
+        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl mx-auto">
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
