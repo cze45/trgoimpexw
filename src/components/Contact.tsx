@@ -1,7 +1,43 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { toast } from "sonner";
+import { submitContactMessage } from "@/lib/contact.functions";
 
 export function Contact() {
+  const [loading, setLoading] = useState(false);
+  const send = useServerFn(submitContactMessage);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    setLoading(true);
+    try {
+      await send({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          email: String(fd.get("email") ?? ""),
+          project: String(fd.get("project") ?? ""),
+          message: String(fd.get("message") ?? ""),
+        },
+      });
+      toast.success("Hvala! Vaš upit je poslat, kontaktiraćemo vas uskoro.");
+      form.reset();
+    } catch (err) {
+      toast.error(
+        err instanceof Error && err.message
+          ? err.message
+          : "Slanje nije uspelo. Pokušajte ponovo.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
+
     <section id="kontakt" className="py-24 bg-secondary text-secondary-foreground relative">
       <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
@@ -43,10 +79,7 @@ export function Contact() {
         </div>
 
         <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            alert("Hvala! Kontaktiraćemo vas uskoro.");
-          }}
+          onSubmit={handleSubmit}
           className="bg-background text-foreground p-8 md:p-10 shadow-industrial"
         >
           <h3 className="font-display text-2xl mb-6">Pošaljite upit</h3>
@@ -69,18 +102,21 @@ export function Contact() {
                 name="message"
                 rows={5}
                 required
+                maxLength={2000}
                 className="w-full bg-muted border border-border px-4 py-3 focus:border-primary focus:outline-none transition-smooth resize-none"
               />
             </div>
             <button
               type="submit"
-              className="w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth"
+              disabled={loading}
+              className="w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth disabled:opacity-60"
             >
-              Pošalji upit
+              {loading ? "Šaljem..." : "Pošalji upit"}
               <Send className="w-4 h-4" />
             </button>
           </div>
         </form>
+
       </div>
     </section>
   );
