@@ -1,7 +1,42 @@
 import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
+import { useServerFn } from "@tanstack/react-start";
+import { toast } from "sonner";
+import { submitContactMessage } from "@/lib/contact.functions";
 
 export function Contact() {
-  return (
+  const [loading, setLoading] = useState(false);
+  const send = useServerFn(submitContactMessage);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const fd = new FormData(form);
+    setLoading(true);
+    try {
+      await send({
+        data: {
+          name: String(fd.get("name") ?? ""),
+          phone: String(fd.get("phone") ?? ""),
+          email: String(fd.get("email") ?? ""),
+          project: String(fd.get("project") ?? ""),
+          message: String(fd.get("message") ?? ""),
+        },
+      });
+      toast.success("Hvala! Vaš upit je poslat, kontaktiraćemo vas uskoro.");
+      form.reset();
+    } catch (err) {
+      toast.error(
+        err instanceof Error && err.message
+          ? err.message
+          : "Slanje nije uspelo. Pokušajte ponovo.",
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
+
     <section id="kontakt" className="py-24 bg-secondary text-secondary-foreground relative">
       <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
