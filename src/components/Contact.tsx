@@ -36,6 +36,7 @@ export function Contact() {
     }
   };
 
+  return (
 
     <section id="kontakt" className="py-24 bg-secondary text-secondary-foreground relative">
       <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
