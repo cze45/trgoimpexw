@@ -21,7 +21,7 @@ export function Hero() {
       <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 border-l-4 border-primary bg-secondary/40 backdrop-blur-sm">
             <span className="w-2 h-2 bg-primary animate-pulse" />
             <span className="text-secondary-foreground text-sm uppercase tracking-widest">
