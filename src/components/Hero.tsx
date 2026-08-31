@@ -58,7 +58,7 @@ export function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl">
+        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl mx-auto">
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
