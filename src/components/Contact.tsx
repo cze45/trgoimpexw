@@ -38,7 +38,7 @@ export function Contact() {
 
   return (
 
-    <section id="kontakt" className="py-28 md:py-36 bg-secondary text-secondary-foreground relative">
+    <section id="kontakt" className="pt-28 md:pt-36 pb-10 md:pb-14 bg-secondary text-secondary-foreground relative">
       <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
         <div>
