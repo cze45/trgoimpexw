@@ -21,36 +21,36 @@ export function Hero() {
       <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
-        <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 mb-6 px-4 py-2 border-l-4 border-primary bg-secondary/40 backdrop-blur-sm">
-            <span className="w-2 h-2 bg-primary animate-pulse" />
-            <span className="text-secondary-foreground text-sm uppercase tracking-widest">
+        <div className="max-w-3xl mx-auto text-center py-8 md:py-12">
+          <div className="inline-flex items-center gap-2 mb-8 px-5 py-3 border-l-4 border-primary bg-secondary/40 backdrop-blur-sm">
+            <span className="w-2.5 h-2.5 bg-primary animate-pulse" />
+            <span className="text-secondary-foreground text-base uppercase tracking-widest">
               Niskogradnja • Ogradjivanje • Asfaltiranje
             </span>
           </div>
 
-          <h1 className="font-display text-secondary-foreground leading-tight mb-6">
-            
-            <span className="block text-5xl md:text-7xl lg:text-8xl leading-[1.05]">
+          <h1 className="font-display text-secondary-foreground leading-tight mb-8">
+
+            <span className="block text-6xl md:text-8xl lg:text-9xl leading-[1.05]">
               Gradimo
               <br />
               temelje budućnosti<span className="text-brand-red">.</span>
             </span>
           </h1>
 
-         
+
 
           <div className="flex flex-wrap justify-center gap-4">
             <a
               href="#kontakt"
-              className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth"
+              className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-10 py-5 font-display uppercase tracking-wider text-base hover:shadow-glow transition-smooth"
             >
               Zatražite ponudu
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-smooth" />
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
             </a>
             <a
               href="#projekti"
-              className="inline-flex items-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:bg-secondary-foreground hover:text-secondary transition-smooth"
+              className="inline-flex items-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-10 py-5 font-display uppercase tracking-wider text-base hover:bg-secondary-foreground hover:text-secondary transition-smooth"
             >
               Naši projekti
             </a>
