@@ -38,40 +38,40 @@ export function Contact() {
 
   return (
 
-    <section id="kontakt" className="py-24 bg-secondary text-secondary-foreground relative">
+    <section id="kontakt" className="py-28 md:py-36 bg-secondary text-secondary-foreground relative">
       <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16">
+      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="w-12 h-1 bg-white" />
             <span className="text-sm uppercase tracking-widest text-secondary-foreground/60">
               Kontakt
             </span>
-                  </div>
+          </div>
           <h2 className="font-display text-4xl md:text-6xl mb-6">
             Imate <span className="text-brand-green">projekat</span>?
             <br />Razgovarajmo.
           </h2>
-          <p className="text-secondary-foreground/70 text-lg mb-10 max-w-md">
+          <p className="text-secondary-foreground/80 text-lg md:text-xl mb-12 max-w-md">
             Pošaljite nam upit ili nas kontaktirajte direktno. Odgovaramo u roku od
             24 sata radnim danom.
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             {[
               { icon: MapPin, label: "Adresa", value: "Titelska 5 Novi Sad, Srbija" },
               { icon: Phone, label: "Telefon", value: "+381 63 504 857" },
               { icon: Mail, label: "Email", value: "trgoimpexw@gmail.com" },
             ].map((c) => (
-              <div key={c.label} className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-primary/10 border border-primary/30 flex items-center justify-center shrink-0">
-                  <c.icon className="w-5 h-5 text-primary" />
+              <div key={c.label} className="flex items-start gap-5">
+                <div className="w-14 h-14 bg-secondary-foreground/10 border border-secondary-foreground/30 flex items-center justify-center shrink-0">
+                  <c.icon className="w-6 h-6 text-secondary-foreground" />
                 </div>
                 <div>
-                  <div className="text-xs uppercase tracking-widest text-secondary-foreground/60 mb-1">
+                  <div className="text-sm uppercase tracking-widest text-secondary-foreground/70 mb-1">
                     {c.label}
                   </div>
-                  <div className="font-display text-lg">{c.value}</div>
+                  <div className="font-display text-xl md:text-2xl">{c.value}</div>
                 </div>
               </div>
             ))}
