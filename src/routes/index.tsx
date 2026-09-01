@@ -10,18 +10,28 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Trgoimpex W — Građevinska kompanija | Niskogradnja i Visokogradnja" },
+      { title: "Trgoimpex W — Građevinska kompanija | Novi Sad" },
       {
         name: "description",
         content:
-          "Trgoimpex W — građevinska kompanija specijalizovana za niskogradnju, visokogradnju i infrastrukturne projekte. 25+ godina iskustva.",
+          "Trgoimpex W — građevinska kompanija iz Novog Sada specijalizovana za niskogradnju, visokogradnju i infrastrukturne radove. Kontaktirajte nas za ponudu.",
       },
       { property: "og:title", content: "Trgoimpex W — Građevinska kompanija" },
       {
         property: "og:description",
-        content: "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering.",
+        content:
+          "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
       },
       { property: "og:url", content: "https://trgoimpexw.lovable.app/" },
+      { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Trgoimpex W" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Trgoimpex W — Građevinska kompanija" },
+      {
+        name: "twitter:description",
+        content:
+          "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
+      },
     ],
     links: [{ rel: "canonical", href: "https://trgoimpexw.lovable.app/" }],
     scripts: [
