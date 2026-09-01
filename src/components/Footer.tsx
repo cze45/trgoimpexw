@@ -4,7 +4,7 @@ import logoIcon from "@/assets/logo-icon.png";
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground border-t border-primary/20">
-      <div className="container mx-auto px-6 pt-6 md:pt-10 pb-8 md:pb-14 flex flex-col items-center justify-center gap-5 text-center">
+      <div className="container mx-auto px-6 pt-4 md:pt-6 pb-8 md:pb-14 flex flex-col items-center justify-center gap-5 text-center">
         <img
           src={logoMain}
           alt="Trgoimpex W logotip"
