@@ -58,21 +58,21 @@ export function Hero() {
         </div>
 
         {/* Stats strip */}
-        <div className="mt-16 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl mx-auto">
+        <div className="mt-20 md:mt-28 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-5xl mx-auto">
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
             { n: "15+", l: "Stručnih radnika" },
             { n: "100%", l: "Posvećenost" },
           ].map((s) => (
-            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-4 md:p-6 relative min-w-0">
-              <div className="font-display text-2xl md:text-4xl text-secondary-foreground leading-none">
+            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6 md:p-8 relative min-w-0">
+              <div className="font-display text-3xl md:text-5xl text-secondary-foreground leading-none">
                 {s.n}
               </div>
-              <div className="text-secondary-foreground text-[10px] md:text-xs uppercase tracking-wider mt-2 leading-tight break-words">
+              <div className="text-secondary-foreground text-xs md:text-sm uppercase tracking-wider mt-3 leading-tight break-words">
                 {s.l}
               </div>
-              <span className="absolute top-2 right-2 md:top-3 md:right-3 w-1.5 h-1.5 bg-brand-green" />
+              <span className="absolute top-3 right-3 md:top-4 md:right-4 w-2 h-2 bg-brand-green" />
             </div>
           ))}
         </div>
