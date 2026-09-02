@@ -20,6 +20,13 @@ export function Footer() {
         <p className="text-sm text-secondary-foreground/60 text-center">
           © {new Date().getFullYear()} Trgoimpex W. Sva prava zadržana.
         </p>
+        <Link
+          to="/privatnost"
+          className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-smooth underline underline-offset-4"
+        >
+          Politika privatnosti
+        </Link>
+
       </div>
     </footer>
   );
