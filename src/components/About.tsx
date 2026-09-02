@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
 const points = [
   "Tim iskusnih građevinskih inženjera",
@@ -56,6 +56,14 @@ export function About() {
               </li>
             ))}
           </ul>
+
+          <a
+            href="#kontakt"
+            className="mt-8 inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth"
+          >
+            Zatražite ponudu
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </div>
       </div>
     </section>

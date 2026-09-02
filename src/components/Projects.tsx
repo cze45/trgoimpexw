@@ -56,6 +56,7 @@ export function Projects() {
                 width={1280}
                 height={896}
                 loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-smooth duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-transparent" />

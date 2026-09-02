@@ -10,6 +10,7 @@ export function Hero() {
       <img
         src={heroImage}
         alt="Gradilište Trgoimpex W"
+        fetchPriority="high"
         width={1920}
         height={1280}
         className="absolute inset-0 w-full h-full object-cover"

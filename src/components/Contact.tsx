@@ -59,23 +59,47 @@ export function Contact() {
 
           <div className="space-y-8">
             {[
-              { icon: MapPin, label: "Adresa", value: "Titelska 5 Novi Sad, Srbija" },
-              { icon: Phone, label: "Telefon", value: "+381 63 504 857" },
-              { icon: Mail, label: "Email", value: "trgoimpexw@gmail.com" },
+              {
+                icon: MapPin,
+                label: "Adresa",
+                value: "Titelska 5 Novi Sad, Srbija",
+                href: "https://www.google.com/maps/search/?api=1&query=Titelska+5+Novi+Sad+Srbija",
+                external: true,
+              },
+              {
+                icon: Phone,
+                label: "Telefon",
+                value: "+381 63 504 857",
+                href: "tel:+381635048570",
+              },
+              {
+                icon: Mail,
+                label: "Email",
+                value: "trgoimpexw@gmail.com",
+                href: "mailto:trgoimpexw@gmail.com",
+              },
             ].map((c) => (
-              <div key={c.label} className="flex items-start gap-5">
-                <div className="w-14 h-14 bg-secondary-foreground/10 border border-secondary-foreground/30 flex items-center justify-center shrink-0">
+              <a
+                key={c.label}
+                href={c.href}
+                {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="flex items-start gap-5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
+              >
+                <div className="w-14 h-14 bg-secondary-foreground/10 border border-secondary-foreground/30 flex items-center justify-center shrink-0 group-hover:border-brand-green transition-smooth">
                   <c.icon className="w-6 h-6 text-secondary-foreground" />
                 </div>
                 <div>
                   <div className="text-sm uppercase tracking-widest text-secondary-foreground/70 mb-1">
                     {c.label}
                   </div>
-                  <div className="font-display text-xl md:text-2xl">{c.value}</div>
+                  <div className="font-display text-xl md:text-2xl group-hover:text-brand-green transition-smooth">
+                    {c.value}
+                  </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
+
         </div>
 
         <form
