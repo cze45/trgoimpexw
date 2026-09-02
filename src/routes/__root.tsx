@@ -6,25 +6,32 @@ import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
-        <p className="mt-2 text-sm text-muted-foreground">
-          The page you're looking for doesn't exist or has been moved.
-        </p>
-        <div className="mt-6">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Go home
-          </Link>
-        </div>
+    <div className="flex min-h-screen flex-col items-center justify-center bg-secondary px-6 text-center text-secondary-foreground">
+      <img src={logoIcon} alt="Trgoimpex W logo" className="h-20 w-auto object-contain" />
+      <h1 className="mt-8 font-display text-6xl md:text-8xl">404</h1>
+      <h2 className="mt-3 font-display text-2xl md:text-3xl">Stranica nije pronađena</h2>
+      <p className="mt-3 max-w-md text-secondary-foreground/70">
+        Stranica koju tražite ne postoji ili je premeštena. Vratite se na početnu ili
+        nam pišite — rado ćemo pomoći.
+      </p>
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <Link
+          to="/"
+          className="inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-sm uppercase tracking-wider text-primary-foreground transition-smooth hover:shadow-glow"
+        >
+          Početna strana
+        </Link>
+        <a
+          href="/#kontakt"
+          className="inline-flex items-center justify-center border border-secondary-foreground/40 px-8 py-4 font-display text-sm uppercase tracking-wider transition-smooth hover:border-brand-green hover:text-brand-green"
+        >
+          Kontakt
+        </a>
       </div>
     </div>
   );
 }
+
 
 export const Route = createRootRoute({
   head: () => ({
