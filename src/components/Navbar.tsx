@@ -4,11 +4,11 @@ import logoMain from "@/assets/logo-main.png";
 import logoIcon from "@/assets/logo-icon.png";
 
 const links = [
-  { href: "#pocetna", label: "Početna" },
-  { href: "#usluge", label: "Usluge" },
-  { href: "#projekti", label: "Projekti" },
-  { href: "#o-nama", label: "O nama" },
-  { href: "#kontakt", label: "Kontakt" },
+  { href: "/#pocetna", label: "Početna" },
+  { href: "/#usluge", label: "Usluge" },
+  { href: "/#projekti", label: "Projekti" },
+  { href: "/#o-nama", label: "O nama" },
+  { href: "/#kontakt", label: "Kontakt" },
 ];
 
 export function Navbar() {
@@ -31,7 +31,7 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-20">
-        <a href="#pocetna" className="flex items-center group">
+        <a href="/" aria-label="Trgoimpex W — početna strana" className="flex items-center group">
           <img
             src={logoIcon}
             alt="Trgoimpex W ikonica"
@@ -60,7 +60,8 @@ export function Navbar() {
         <button
           onClick={() => setOpen(!open)}
           className="md:hidden text-secondary-foreground p-2"
-          aria-label="Meni"
+          aria-label={open ? "Zatvori meni" : "Otvori meni"}
+          aria-expanded={open}
         >
           {open ? <X /> : <Menu />}
         </button>
