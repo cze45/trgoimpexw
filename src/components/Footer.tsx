@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import logoMain from "@/assets/logo-main.png";
 import logoIcon from "@/assets/logo-icon.png";
 
