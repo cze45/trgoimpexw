@@ -32,6 +32,8 @@ export const Route = createFileRoute("/")({
         content:
           "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
       },
+      { property: "og:image", content: "https://trgoimpexw.lovable.app/og-image.jpg" },
+      { name: "twitter:image", content: "https://trgoimpexw.lovable.app/og-image.jpg" },
     ],
     links: [{ rel: "canonical", href: "https://trgoimpexw.lovable.app/" }],
     scripts: [
@@ -44,18 +46,21 @@ export const Route = createFileRoute("/")({
           description:
             "Građevinska kompanija specijalizovana za niskogradnju, visokogradnju i infrastrukturne radove.",
           url: "https://trgoimpexw.lovable.app/",
-          telephone: "+387 00 000 000",
-          email: "info@trgoimpex-w.ba",
+          image: "https://trgoimpexw.lovable.app/og-image.jpg",
+          telephone: "+381 63 504 857",
+          email: "trgoimpexw@gmail.com",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Industrijska zona bb",
-            addressCountry: "BA",
+            streetAddress: "Titelska 5",
+            addressLocality: "Novi Sad",
+            addressCountry: "RS",
           },
-          areaServed: "Bosna i Hercegovina",
+          areaServed: "Srbija",
           knowsAbout: ["Niskogradnja", "Visokogradnja", "Infrastruktura", "Inženjering"],
         }),
       },
     ],
+
   }),
   component: Index,
 });
