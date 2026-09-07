@@ -9,19 +9,19 @@ const points = [
 
 export function About() {
   return (
-    <section id="o-nama" className="py-24 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section id="o-nama" className="py-20 md:py-24 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <div className="relative">
           <div className="aspect-square bg-secondary relative overflow-hidden shadow-industrial">
             <div className="absolute inset-0 diagonal-stripes opacity-100" />
-            <div className="absolute inset-4 bg-secondary flex flex-col items-center justify-center text-center p-8">
-              <div className="font-display text-8xl md:text-9xl text-secondary-foreground leading-none">
-                25+
-              </div>
-              <div className="text-secondary-foreground uppercase tracking-widest mt-4 text-sm">
-                Godina gradimo
-                <br />poverenje
-              </div>
+            {/* TODO: zameniti pravom fotografijom (tim ili mehanizacija na gradilištu) */}
+            <div className="absolute inset-4 bg-[oklch(0.18_0_0)] flex flex-col items-center justify-center text-center p-8">
+              <span className="text-white/80 text-sm uppercase tracking-widest">
+                Mesto za fotografiju
+              </span>
+              <span className="text-white/50 text-xs mt-2">
+                tim ili mehanizacija na gradilištu
+              </span>
             </div>
           </div>
         </div>
@@ -34,18 +34,15 @@ export function About() {
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Više od četvrt veka <span className="text-primary">gradimo</span> zajednicu.
+            Više od <span className="text-primary">25</span> godina na terenu.
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-            Trgoimpex W je porodična građevinska kompanija osnovana sa misijom da pruža
-            vrhunski kvalitet u svim segmentima građevinarstva. Specijalizovani smo za
-            niskogradnju, ogradjivanje i asfaltiranje, a naš tim čine iskusni inženjeri, majstori i
-            operativci sa decenijskim iskustvom.
+            Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
+            ograđivanje i asfaltiranje. Tim čine inženjeri, majstori i operativci sa
+            decenijskim iskustvom.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8">
-            Verujemo da se reputacija gradi kao i objekti — sloj po sloj, projekat po
-            projekat. Zato svakom poslu pristupamo s istom posvećenošću, bez obzira na
-            obim.
+            Radimo sertifikovanom mehanizacijom i držimo se rokova i budžeta.
           </p>
 
           <ul className="grid sm:grid-cols-2 gap-3">
