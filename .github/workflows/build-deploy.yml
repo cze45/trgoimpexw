@@ -24,9 +24,16 @@ jobs:
       
       - name: Build project
         run: npm run build
+        env:
+          CI: true
       
-      - name: List build output
-        run: ls -la
+      - name: Check build output
+        run: |
+          echo "=== Contents of repo ==="
+          ls -la
+          echo ""
+          echo "=== Checking for build directories ==="
+          find . -maxdepth 2 -type d -name "dist" -o -name "build" -o -name ".output" 2>/dev/null
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
