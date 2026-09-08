@@ -57,7 +57,7 @@ export function Services() {
 							className="group bg-card p-7 md:p-8 hover:bg-secondary transition-smooth cursor-default relative overflow-hidden"
 						>
 							<div className="absolute top-0 left-0 w-0 h-1 bg-primary group-hover:w-full transition-smooth duration-500" />
-							<s.icon className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-smooth" />
+							<s.icon className="w-10 h-10 text-primary mb-4 group-hover:scale-110 group-hover:text-brand-green transition-smooth" />
 							<h3 className="font-display text-2xl mb-3 text-card-foreground group-hover:text-secondary-foreground transition-smooth">
 								{s.title}
 							</h3>
