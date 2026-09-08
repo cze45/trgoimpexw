@@ -18,7 +18,7 @@ export function Footer() {
             Politika privatnosti
           </Link>
           <p className="text-sm text-secondary-foreground/60">
-            © {new Date().getFullYear()} Trgoimpex W. Sva prava zadržana.
+            © {new Date().getFullYear()} Trgoimpex W<span className="text-[#BE0000]">.</span> Sva prava zadržana<span className="text-[#BE0000]">.</span>
           </p>
         </div>
       </div>

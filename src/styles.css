@@ -150,3 +150,40 @@
     transition: var(--transition-smooth);
   }
 }
+
+/* ── button trace ─────────────────────────────────────────────
+   Dodati na kraj src/styles.css, van @layer utilities.
+   Radi u paru sa src/components/TraceOutline.tsx.            */
+
+[data-trace] {
+  position: relative;
+}
+
+[data-trace] > svg[data-trace-svg] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+[data-trace] > svg[data-trace-svg] rect {
+  fill: none;
+  stroke: oklch(0.62 0.17 148);
+  stroke-width: 2;
+  stroke-dasharray: var(--tw-seg, 150) var(--tw-len, 480);
+  stroke-dashoffset: var(--tw-seg, 150);
+  transition: stroke-dashoffset 0.6s ease-in-out;
+}
+
+[data-trace]:hover > svg[data-trace-svg] rect {
+  stroke-dashoffset: calc(-1 * var(--tw-len, 480));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-trace] > svg[data-trace-svg] rect {
+    transition: none;
+  }
+}

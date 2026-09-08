@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { TraceOutline } from "./TraceOutline";
 
 const points = [
   "Tim iskusnih građevinskih inženjera",
@@ -34,7 +35,7 @@ export function About() {
             </span>
           </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Više od <span className="text-primary">25</span> godina na terenu.
+            Više od <span className="text-primary">25</span> godina na terenu<span className="text-[#BE0000]">.</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
@@ -56,8 +57,10 @@ export function About() {
 
           <a
             href="#kontakt"
-            className="mt-8 inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth"
+            data-trace
+            className="mt-8 relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth"
           >
+            <TraceOutline />
             Zatražite ponudu
             <ArrowRight className="w-4 h-4" />
           </a>

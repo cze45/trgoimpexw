@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { submitContactMessage } from "@/lib/contact.functions";
+import { TraceOutline } from "./TraceOutline";
 
 export function Contact() {
   const [loading, setLoading] = useState(false);
@@ -70,12 +71,16 @@ export function Contact() {
                 icon: Phone,
                 label: "Telefon",
                 value: "+381 63 504 857",
-                href: "tel:+381635048570",
+                href: "tel:+38163504857",
               },
               {
                 icon: Mail,
                 label: "Email",
-                value: "trgoimpexw@gmail.com",
+                value: (
+                  <>
+                    trgoimpexw@gmail<span className="text-[#BE0000]">.</span>com
+                  </>
+                ),
                 href: "mailto:trgoimpexw@gmail.com",
               },
             ].map((c) => (
@@ -133,8 +138,10 @@ export function Contact() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth disabled:opacity-60"
+              data-trace
+              className="w-full relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth disabled:opacity-60"
             >
+              <TraceOutline />
               {loading ? "Šaljem..." : "Pošalji upit"}
               <Send className="w-4 h-4" />
             </button>
