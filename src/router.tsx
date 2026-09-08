@@ -55,13 +55,17 @@ function DefaultErrorComponent({ error, reset }: { error: Error; reset: () => vo
   );
 }
 
+const LazyDefaultErrorComponent = React.lazy(() =>
+  Promise.resolve({ default: DefaultErrorComponent })
+);
+
 export const getRouter = () => {
   const router = createRouter({
     routeTree,
     context: {},
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
-    defaultErrorComponent: DefaultErrorComponent,
+    defaultErrorComponent: LazyDefaultErrorComponent,
   });
 
   return router;
