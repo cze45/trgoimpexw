@@ -24,9 +24,8 @@ export function Hero() {
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
         <div className="w-full text-center py-8 md:py-12 flex flex-col items-center gap-7 md:gap-11">
-          <div className="inline-flex items-center gap-2 px-4 py-2.5 max-w-full border-l-4 border-primary bg-secondary/40 backdrop-blur-sm">
-            <span className="w-2.5 h-2.5 bg-primary animate-pulse shrink-0" />
-            <span className="text-secondary-foreground text-[13px] md:text-base uppercase tracking-wider text-balance">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 max-w-full border-l-2 border-primary bg-secondary/40 backdrop-blur-sm">
+            <span className="text-secondary-foreground text-[11px] md:text-sm uppercase tracking-wider text-balance">
               Niskogradnja • Ograđivanje • Asfaltiranje
             </span>
           </div>
