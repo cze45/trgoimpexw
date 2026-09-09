@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import logoMain from "@/assets/logo-main.png";
+import logoIcon from "@/assets/logo-icon.png";
 
 export function Footer() {
   return (
@@ -8,7 +9,12 @@ export function Footer() {
         <img
           src={logoMain}
           alt="Trgoimpex W logo"
-          className="h-16 w-auto object-contain md:h-12"
+          className="h-16 w-auto object-contain md:hidden"
+        />
+        <img
+          src={logoIcon}
+          alt="Trgoimpex W logo"
+          className="hidden md:block h-12 w-auto object-contain"
         />
         <div className="flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:items-center md:gap-5 md:ml-auto">
           <Link
