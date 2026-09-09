@@ -139,11 +139,11 @@ export function Contact() {
               type="submit"
               disabled={loading}
               data-trace
-              className="w-full relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth disabled:opacity-60"
+              className="w-full group relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth hover:scale-[1.01] hover:shadow-glow-green active:scale-[0.99] disabled:opacity-60 disabled:hover:scale-100 disabled:hover:shadow-none"
             >
               <TraceOutline />
               {loading ? "Šaljem..." : "Pošalji upit"}
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
           </div>
         </form>

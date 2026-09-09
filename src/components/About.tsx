@@ -58,11 +58,11 @@ export function About() {
           <a
             href="#kontakt"
             data-trace
-            className="mt-8 relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth"
+            className="mt-8 group relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth hover:scale-[1.02] hover:shadow-glow-green active:scale-[0.98]"
           >
             <TraceOutline />
             Zatražite ponudu
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
       </div>
