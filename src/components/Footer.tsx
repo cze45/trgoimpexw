@@ -1,16 +1,16 @@
 import { Link } from "@tanstack/react-router";
-import logoIcon from "@/assets/logo-icon.png";
+import logoMain from "@/assets/logo-main.png";
 
 export function Footer() {
   return (
     <footer className="bg-secondary text-secondary-foreground border-t border-white/15">
-      <div className="container mx-auto px-6 py-5 flex flex-wrap items-center justify-between gap-4">
+      <div className="container mx-auto px-6 py-8 md:py-5 flex flex-col items-center text-center gap-5 md:flex-row md:justify-between md:items-center md:text-left">
         <img
-          src={logoIcon}
+          src={logoMain}
           alt="Trgoimpex W logo"
-          className="h-16 w-auto object-contain"
+          className="h-28 w-auto object-contain md:h-16"
         />
-        <div className="flex flex-wrap items-center gap-5 ml-auto">
+        <div className="flex flex-col items-center gap-3 md:flex-row md:flex-wrap md:items-center md:gap-5 md:ml-auto">
           <Link
             to="/privatnost"
             className="text-sm text-secondary-foreground/60 hover:text-secondary-foreground transition-smooth underline underline-offset-4"
