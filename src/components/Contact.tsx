@@ -119,21 +119,22 @@ export function Contact() {
             </div>
             <Field label="Email" name="email" type="email" />
             <Field label="Vrsta projekta" name="project" />
-            <div>
-              <label
-                htmlFor="contact-message"
-                className="block text-xs uppercase tracking-widest text-muted-foreground mb-2"
-              >
-                Poruka
-              </label>
+            <div className="relative">
               <textarea
                 id="contact-message"
                 name="message"
                 rows={5}
                 required
                 maxLength={2000}
-                className="w-full bg-muted border border-border px-4 py-3 focus:border-primary focus:outline-none transition-smooth resize-none"
+                placeholder=" "
+                className="floating-input w-full bg-muted border border-border px-4 pt-7 pb-3 focus:border-primary focus:outline-none transition-smooth resize-none"
               />
+              <label
+                htmlFor="contact-message"
+                className="floating-label absolute left-4 top-3.5 text-muted-foreground text-xs uppercase tracking-widest pointer-events-none transition-smooth origin-left"
+              >
+                Poruka
+              </label>
             </div>
             <button
               type="submit"
@@ -164,20 +165,21 @@ function Field({
 }) {
   const id = `contact-${name}`;
   return (
-    <div>
-      <label
-        htmlFor={id}
-        className="block text-xs uppercase tracking-widest text-muted-foreground mb-2"
-      >
-        {label}
-      </label>
+    <div className="relative">
       <input
         id={id}
         type={type}
         name={name}
         required
-        className="w-full bg-muted border border-border px-4 py-3 focus:border-primary focus:outline-none transition-smooth"
+        placeholder=" "
+        className="floating-input w-full bg-muted border border-border px-4 pt-6 pb-2 focus:border-primary focus:outline-none transition-smooth"
       />
+      <label
+        htmlFor={id}
+        className="floating-label absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground text-xs uppercase tracking-widest pointer-events-none transition-smooth origin-left"
+      >
+        {label}
+      </label>
     </div>
   );
 }
