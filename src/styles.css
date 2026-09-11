@@ -160,9 +160,10 @@
 
 .floating-input:focus + .floating-label,
 .floating-input:not(:placeholder-shown) + .floating-label {
-  top: 0.5rem !important;
-  transform: translateX(-0.25rem) scale(0.85) !important;
-  @apply text-primary bg-muted px-1;
+  top: 0.625rem !important;
+  left: 1rem !important;
+  transform: translateY(0) scale(0.8) !important;
+  @apply text-primary;
 }
 
 .floating-input:focus + .floating-label {
