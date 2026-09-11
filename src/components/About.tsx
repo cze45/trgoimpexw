@@ -28,12 +28,6 @@ export function About() {
         </div>
 
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-1 bg-primary" />
-            <span className="text-sm uppercase tracking-widest text-muted-foreground">
-              O kompaniji
-            </span>
-          </div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
             Više od <span className="text-primary">25</span> godina na terenu<span className="text-[#BE0000]">.</span>
           </h2>
