@@ -38,12 +38,6 @@ export function Services() {
 		<section id="usluge" className="py-20 md:py-24 bg-background relative">
 			<div className="container mx-auto px-6">
 				<div className="max-w-2xl mb-12 md:mb-16">
-					<div className="flex items-center gap-3 mb-4">
-						<div className="w-12 h-1 bg-primary" />
-						<span className="text-sm uppercase tracking-widest text-muted-foreground">
-							Šta radimo
-						</span>
-					</div>
 					<h2 className="font-display text-4xl md:text-6xl text-foreground mb-4">
 						Naše <span className="text-primary">usluge</span>
 					</h2>

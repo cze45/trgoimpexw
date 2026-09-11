@@ -15,12 +15,6 @@ export function Projects() {
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap items-end justify-between mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-1 bg-white" />
-              <span className="text-sm uppercase tracking-widest text-secondary-foreground/60">
-                Naš rad
-              </span>
-            </div>
             <h2 className="font-display text-4xl md:text-6xl mb-4">
               Odabrani <span className="text-brand-green">projekti</span>
             </h2>
