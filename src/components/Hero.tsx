@@ -23,7 +23,7 @@ export function Hero() {
         <div className="w-full text-center py-8 md:py-12 flex flex-col items-center gap-10 md:gap-11">
           {/* Na telefonu tri reda, veće i kontrastnije; od tableta naviše kao ranije */}
           <h1 className="font-display text-white md:text-secondary-foreground m-0 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] md:drop-shadow-none">
-            <span className="block text-[length:min(96px,calc((100vw-48px)/3.3))] md:text-8xl lg:text-9xl leading-[1.1] md:leading-[1.05] text-center md:text-balance">
+            <span className="block text-[80px] md:text-8xl lg:text-9xl leading-[1.1] md:leading-[1.05] text-center md:text-balance">
               <span className="block md:inline">Temelj,</span>{" "}
               <span className="block md:inline">ograda,</span>{" "}
               <span className="block md:inline">
