@@ -110,7 +110,7 @@ export function Projects() {
           </Carousel>
 
           {/* Aktivni indikator postaje crveni krug */}
-          <div className="mt-6 flex items-center justify-center gap-2">
+          <div className="mt-4 flex items-center justify-center gap-1.5">
             {Array.from({ length: count }, (_, i) => {
               const active = i === current;
               return (
@@ -124,7 +124,7 @@ export function Projects() {
                 >
                   <span
                     className={`block rounded-full transition-all duration-300 ${
-                      active ? "w-3 h-3 bg-brand-red" : "w-8 h-1 bg-secondary-foreground/40"
+                      active ? "w-1.5 h-1.5 bg-brand-red" : "w-4 h-px bg-secondary-foreground/30"
                     }`}
                   />
                 </button>
