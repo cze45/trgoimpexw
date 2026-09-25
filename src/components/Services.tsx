@@ -1,4 +1,4 @@
-import { Building2, Construction, HardHat, Truck, Ruler, Route } from "lucide-react";
+import { Building2, Construction, HardHat, Truck, Grid3X3, Route } from "lucide-react";
 
 const services = [
 	{
@@ -12,9 +12,9 @@ const services = [
 		desc: "Stambeni, poslovni i industrijski objekti.",
 	},
 	{
-		icon: Ruler,
-		title: "Projektovanje",
-		desc: "Projektna dokumentacija i konsalting.",
+		icon: Grid3X3,
+		title: "Ograđivanje",
+		desc: "Izrada i ugradnja ograda različitih vrsta — od žičanih i panelnih do drvenih i betonskih ograda.",
 	},
 	{
 		icon: Truck,
