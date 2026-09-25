@@ -4,10 +4,7 @@ import { TraceOutline } from "./TraceOutline";
 
 export function Hero() {
   return (
-    <section
-      id="pocetna"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
+    <section id="pocetna" className="relative min-h-screen flex items-center overflow-hidden">
       <img
         src={heroImage}
         alt="Gradilište Trgoimpex W"
@@ -23,19 +20,23 @@ export function Hero() {
       <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
 
       <div className="container mx-auto px-6 relative z-10 pt-24">
-        <div className="w-full text-center py-8 md:py-12 flex flex-col items-center gap-7 md:gap-11">
-
-          <h1 className="font-display text-secondary-foreground m-0">
-            <span className="block text-4xl sm:text-6xl md:text-8xl lg:text-9xl leading-[1.05] text-center text-balance">
-              Temelj, ograda, asfalt<span className="text-brand-red">.</span>
+        <div className="w-full text-center py-8 md:py-12 flex flex-col items-center gap-10 md:gap-11">
+          {/* Na telefonu tri reda, veće i kontrastnije; od tableta naviše kao ranije */}
+          <h1 className="font-display text-white md:text-secondary-foreground m-0 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] md:drop-shadow-none">
+            <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] md:leading-[1.05] text-center md:text-balance">
+              <span className="block md:inline">Temelj,</span>{" "}
+              <span className="block md:inline">ograda,</span>{" "}
+              <span className="block md:inline">
+                asfalt<span className="text-brand-red">.</span>
+              </span>
             </span>
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 w-full max-w-xs md:max-w-none md:w-auto">
             <a
               href="#kontakt"
               data-trace
-              className="group relative inline-flex items-center gap-3 bg-brand-green text-white opacity-90 px-9 py-4 font-display uppercase tracking-wider text-base transition-smooth"
+              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-4 font-display uppercase tracking-wider text-base transition-smooth"
             >
               <TraceOutline />
               Zatražite ponudu
@@ -43,7 +44,7 @@ export function Hero() {
             </a>
             <a
               href="#projekti"
-              className="inline-flex items-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-4 font-display uppercase tracking-wider text-base hover:bg-secondary-foreground hover:text-secondary transition-smooth"
+              className="inline-flex items-center justify-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-4 font-display uppercase tracking-wider text-base hover:bg-secondary-foreground hover:text-secondary transition-smooth"
             >
               Naši projekti
             </a>
@@ -58,11 +59,11 @@ export function Hero() {
             { n: "15+", l: "Stručnih radnika" },
             { n: "24h", l: "Odgovor na upit" },
           ].map((s) => (
-            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-5 md:p-6 relative min-w-0">
-              <div className="font-display text-2xl md:text-4xl text-secondary-foreground/90 leading-none">
+            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6 relative min-w-0">
+              <div className="font-display text-4xl text-secondary-foreground md:text-secondary-foreground/90 leading-none">
                 {s.n}
               </div>
-              <div className="text-secondary-foreground/80 text-[10px] md:text-xs uppercase tracking-wider mt-2 leading-tight break-words">
+              <div className="text-secondary-foreground/85 md:text-secondary-foreground/80 text-xs uppercase tracking-wider mt-3 md:mt-2 leading-tight break-words">
                 {s.l}
               </div>
               <span className="absolute top-2 right-2 md:top-3 md:right-3 w-1.5 h-1.5 bg-brand-green" />
