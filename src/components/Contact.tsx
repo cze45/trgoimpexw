@@ -44,8 +44,8 @@ export function Contact() {
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
         <div>
           <h2 className="font-display text-4xl md:text-6xl mb-6">
-            Imate <span className="text-brand-green">projekat</span><span className="text-brand-red">?</span>
-            <br />Razgovarajmo.
+            Imate <span className="text-brand-green">projekat</span>?
+            <br />Razgovarajmo<span className="text-brand-red">.</span>
           </h2>
           <p className="text-secondary-foreground/80 text-lg md:text-xl mb-12 max-w-md">
             Pošaljite nam upit ili nas kontaktirajte direktno. Odgovaramo u roku od
