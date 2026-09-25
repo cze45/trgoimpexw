@@ -44,7 +44,7 @@ export function Contact() {
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
         <div>
           <h2 className="font-display text-4xl md:text-6xl mb-6">
-            Imate <span className="text-brand-green">projekat</span>?
+            Imate <span className="text-brand-green">projekat</span><span className="text-brand-red">?</span>
             <br />Razgovarajmo.
           </h2>
           <p className="text-secondary-foreground/80 text-lg md:text-xl mb-12 max-w-md">
