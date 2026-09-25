@@ -23,7 +23,7 @@ export function Hero() {
         <div className="w-full text-center py-8 md:py-12 flex flex-col items-center gap-10 md:gap-11">
           {/* Na telefonu tri reda, veće i kontrastnije; od tableta naviše kao ranije */}
           <h1 className="font-display text-white md:text-secondary-foreground m-0 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] md:drop-shadow-none">
-            <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl leading-[0.95] md:leading-[1.05] text-center md:text-balance">
+            <span className="block text-[length:min(96px,calc((100vw-48px)/3.3))] md:text-8xl lg:text-9xl leading-[1.1] md:leading-[1.05] text-center md:text-balance">
               <span className="block md:inline">Temelj,</span>{" "}
               <span className="block md:inline">ograda,</span>{" "}
               <span className="block md:inline">
@@ -36,7 +36,7 @@ export function Hero() {
             <a
               href="#kontakt"
               data-trace
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-4 font-display uppercase tracking-wider text-base transition-smooth"
+              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-3 md:py-4 font-display uppercase tracking-wider text-sm md:text-base transition-smooth"
             >
               <TraceOutline />
               Zatražite ponudu
@@ -44,7 +44,7 @@ export function Hero() {
             </a>
             <a
               href="#projekti"
-              className="inline-flex items-center justify-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-4 font-display uppercase tracking-wider text-base hover:bg-secondary-foreground hover:text-secondary transition-smooth"
+              className="inline-flex items-center justify-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-3 md:py-4 font-display uppercase tracking-wider text-sm md:text-base hover:bg-secondary-foreground hover:text-secondary transition-smooth"
             >
               Naši projekti
             </a>
