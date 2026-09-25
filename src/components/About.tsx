@@ -29,7 +29,7 @@ export function About() {
 
         <div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Više od <span className="text-primary underline decoration-brand-green decoration-4 underline-offset-8">25 godina</span> na terenu<span className="text-[#BE0000]">.</span>
+            Više od <span className="text-primary underline decoration-brand-green decoration-4 underline-offset-4">25 godina</span> na terenu<span className="text-[#BE0000]">.</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
