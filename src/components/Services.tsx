@@ -44,7 +44,7 @@ export function Services() {
 					<h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal text-foreground mb-4">
 						Naše <span className="text-brand-green md:text-primary">usluge</span>
 					</h2>
-					<p className="text-muted-foreground text-lg">Ovo su poslovi koje radimo.</p>
+					<p className="text-muted-foreground text-lg">Ovo su poslovi koje obavljamo.</p>
 				</div>
 
 				{/* Mobilni akordeon — samo ikonica + naslov, klik za opis */}
