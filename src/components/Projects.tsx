@@ -124,7 +124,7 @@ export function Projects() {
                 >
                   <span
                     className={`block rounded-full transition-all duration-300 ${
-                      active ? "w-1.5 h-1.5 bg-brand-red" : "w-4 h-px bg-secondary-foreground/30"
+                      active ? "w-2 h-2 bg-brand-red" : "w-5 h-1 bg-secondary-foreground/30"
                     }`}
                   />
                 </button>

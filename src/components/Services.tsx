@@ -42,7 +42,7 @@ export function Services() {
 			<div className="container mx-auto px-6">
 				<div className="max-w-2xl mb-12 md:mb-16">
 					<h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal text-foreground mb-4">
-						Naše <span className="text-brand-green md:text-primary">usluge</span>
+						Naše <span className="text-brand-green">usluge</span>
 					</h2>
 					<p className="text-muted-foreground text-lg">Ovo su poslovi koje obavljamo.</p>
 				</div>
