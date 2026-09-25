@@ -29,7 +29,7 @@ export function About() {
 
         <div>
           <h2 className="font-display text-4xl md:text-5xl mb-6">
-            Više od <span className="text-primary">25</span> godina na terenu<span className="text-[#BE0000]">.</span>
+            Više od <span className="text-primary underline decoration-brand-green decoration-4 underline-offset-8">25 godina</span> na terenu<span className="text-[#BE0000]">.</span>
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
@@ -43,7 +43,7 @@ export function About() {
           <ul className="grid sm:grid-cols-2 gap-3">
             {points.map((p) => (
               <li key={p} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
                 <span className="text-foreground">{p}</span>
               </li>
             ))}
