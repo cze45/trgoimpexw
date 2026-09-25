@@ -57,14 +57,14 @@ export function Services() {
 									type="button"
 									aria-expanded={open}
 									onClick={() => setOpenIndex(open ? null : i)}
-									className="w-full flex items-center gap-4 py-5 text-left"
+									className="w-full flex items-center gap-5 py-6 text-left"
 								>
-									<s.icon className="w-7 h-7 shrink-0 text-primary transition-smooth" />
-									<span className="font-display text-xl text-card-foreground flex-1">
+									<s.icon className="w-9 h-9 shrink-0 text-primary transition-smooth" />
+									<span className="font-display text-2xl text-card-foreground flex-1">
 										{s.title}
 									</span>
 									<ChevronDown
-										className={`w-5 h-5 shrink-0 text-muted-foreground transition-transform duration-300 ${
+										className={`w-6 h-6 shrink-0 text-muted-foreground transition-transform duration-300 ${
 											open ? "rotate-180 text-primary" : ""
 										}`}
 										strokeWidth={1.5}
@@ -76,7 +76,7 @@ export function Services() {
 									}`}
 								>
 									<div className="overflow-hidden">
-										<p className="pb-5 pr-4 text-muted-foreground leading-relaxed">
+										<p className="pb-6 pl-14 pr-4 text-lg text-muted-foreground leading-relaxed">
 											{s.desc}
 										</p>
 									</div>
