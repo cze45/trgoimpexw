@@ -43,7 +43,7 @@ export function Contact() {
       <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
         <div>
-          <h2 className="font-display text-4xl md:text-6xl mb-6">
+          <h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal mb-6">
             Imate <span className="text-brand-green">projekat</span>?
             <br />Razgovarajmo<span className="text-brand-red">.</span>
           </h2>

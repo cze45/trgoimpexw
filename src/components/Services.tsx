@@ -41,10 +41,10 @@ export function Services() {
 		<section id="usluge" className="py-20 md:py-24 bg-background relative">
 			<div className="container mx-auto px-6">
 				<div className="max-w-2xl mb-12 md:mb-16">
-					<h2 className="font-display text-4xl md:text-6xl text-foreground mb-4">
-						Naše <span className="text-primary">usluge</span>
+					<h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal text-foreground mb-4">
+						Naše <span className="text-brand-green">usluge</span>
 					</h2>
-					<p className="text-muted-foreground text-lg">Ovo su poslovi koje radimo.</p>
+					<p className="text-muted-foreground text-lg">Ovo su poslovi koje obavljamo.</p>
 				</div>
 
 				{/* Mobilni akordeon — samo ikonica + naslov, klik za opis */}
@@ -60,7 +60,7 @@ export function Services() {
 									className="w-full flex items-center gap-5 py-6 text-left"
 								>
 									<s.icon className="w-9 h-9 shrink-0 text-primary transition-smooth" />
-									<span className="font-display text-2xl text-card-foreground flex-1">
+									<span className="font-display text-xl text-card-foreground flex-1">
 										{s.title}
 									</span>
 									<ChevronDown

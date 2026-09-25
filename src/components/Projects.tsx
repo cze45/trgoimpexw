@@ -88,7 +88,7 @@ export function Projects() {
       <div className="container mx-auto px-6">
         <div className="flex flex-wrap items-end justify-between mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="font-display text-4xl md:text-6xl mb-4">
+            <h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal mb-4">
               Odabrani <span className="text-brand-green">projekti</span>
             </h2>
             <p className="text-secondary-foreground/70 text-lg">
@@ -124,7 +124,7 @@ export function Projects() {
                 >
                   <span
                     className={`block rounded-full transition-all duration-300 ${
-                      active ? "w-1.5 h-1.5 bg-brand-red" : "w-4 h-px bg-secondary-foreground/30"
+                      active ? "w-2 h-2 bg-brand-red" : "w-5 h-1 bg-secondary-foreground/30"
                     }`}
                   />
                 </button>
