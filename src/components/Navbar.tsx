@@ -14,6 +14,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<number | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -68,14 +69,21 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden bg-secondary border-t border-primary/20">
-          <nav className="container mx-auto px-6 py-4 flex flex-col gap-4">
-            {links.map((l) => (
+        <div className="md:hidden bg-secondary border-t border-primary/20 mobile-menu">
+          <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
+            {links.map((l, i) => (
               <a
                 key={l.href}
                 href={l.href}
-                onClick={() => setOpen(false)}
-                className="text-secondary-foreground/90 hover:text-primary uppercase tracking-wider text-sm font-medium py-2"
+                onClick={() => {
+                  setActive(i);
+                  setTimeout(() => setOpen(false), 400);
+                }}
+                className={`uppercase tracking-wider text-sm font-medium py-3 px-3 transition-smooth ${
+                  active === i
+                    ? "bg-brand-green text-white"
+                    : "text-secondary-foreground/90 hover:text-white"
+                }`}
               >
                 {l.label}
               </a>
