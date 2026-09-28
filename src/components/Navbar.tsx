@@ -68,8 +68,12 @@ export function Navbar() {
         </button>
       </div>
 
-      {open && (
-        <div className="md:hidden bg-secondary border-t border-primary/20 mobile-menu">
+      <div
+        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
+          open ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"
+        }`}
+      >
+        <div className="bg-secondary border-t border-primary/20">
           <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
             {links.map((l, i) => (
               <a
@@ -90,7 +94,7 @@ export function Navbar() {
             ))}
           </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }
