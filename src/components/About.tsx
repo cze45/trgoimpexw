@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { TraceOutline } from "./TraceOutline";
 
 const points = [
@@ -52,10 +52,11 @@ export function About() {
           <a
             href="#kontakt"
             data-trace
-            className="mt-8 group relative inline-flex items-center justify-center min-w-[204px] gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth"
+            className="mt-8 group relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth"
           >
             <TraceOutline />
             Zatražite ponudu
+            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
       </div>

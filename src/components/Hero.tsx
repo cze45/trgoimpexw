@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero-construction.jpg";
+import { ArrowRight } from "lucide-react";
 import { TraceOutline } from "./TraceOutline";
 
 export function Hero() {
@@ -35,10 +36,11 @@ export function Hero() {
             <a
               href="#kontakt"
               data-trace
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 md:min-w-[231px] px-9 py-3 md:py-4 font-display text-base md:text-lg transition-smooth"
+              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-3 md:py-4 font-display text-base md:text-lg transition-smooth"
             >
               <TraceOutline />
               Zatražite ponudu
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
             </a>
             <a
               href="#projekti"
