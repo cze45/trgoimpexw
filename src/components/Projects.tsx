@@ -33,9 +33,9 @@ const projects = [
 
 type Project = (typeof projects)[number];
 
-function ProjectCard({ p, i }: { p: Project; i: number }) {
+function ProjectCard({ p }: { p: Project }) {
   return (
-    <article className="group relative overflow-hidden bg-card aspect-[4/5] shadow-industrial">
+    <article className="relative overflow-hidden bg-card aspect-[4/5] shadow-industrial">
       <img
         src={p.img}
         alt={p.title}
@@ -43,22 +43,18 @@ function ProjectCard({ p, i }: { p: Project; i: number }) {
         height={896}
         loading="lazy"
         decoding="async"
-        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-smooth duration-700"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-transparent" />
 
-      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-xs font-display uppercase tracking-wider">
-        {String(i + 1).padStart(2, "0")} / {p.cat}
+      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-sm font-display">
+        {p.cat}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-2 group-hover:translate-y-0 transition-smooth">
+      <div className="absolute bottom-0 left-0 right-0 p-6">
         <h3 className="font-display text-2xl mb-2">{p.title}</h3>
-        <p className="text-secondary-foreground/80 text-sm opacity-0 group-hover:opacity-100 transition-smooth">
-          {p.desc}
-        </p>
+        <p className="text-secondary-foreground/80 text-sm">{p.desc}</p>
       </div>
-
-      <div className="absolute bottom-0 left-0 h-1 w-0 bg-primary group-hover:w-full transition-smooth duration-500" />
     </article>
   );
 }
@@ -103,7 +99,7 @@ export function Projects() {
             <CarouselContent className="-ml-6">
               {projects.map((p, i) => (
                 <CarouselItem key={i} className="pl-6">
-                  <ProjectCard p={p} i={i} />
+                  <ProjectCard p={p} />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -124,7 +120,9 @@ export function Projects() {
                 >
                   <span
                     className={`block rounded-full transition-all duration-300 ${
-                      active ? "w-2 h-2 bg-secondary-foreground/60" : "w-5 h-1 bg-secondary-foreground/30"
+                      active
+                        ? "w-2 h-2 bg-secondary-foreground/60"
+                        : "w-5 h-1 bg-secondary-foreground/30"
                     }`}
                   />
                 </button>
@@ -136,7 +134,7 @@ export function Projects() {
         {/* Tablet i desktop — mreža kao ranije */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((p, i) => (
-            <ProjectCard key={i} p={p} i={i} />
+            <ProjectCard key={i} p={p} />
           ))}
         </div>
       </div>

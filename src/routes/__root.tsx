@@ -18,13 +18,13 @@ function NotFoundComponent() {
       <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
         <Link
           to="/"
-          className="inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-sm uppercase tracking-wider text-primary-foreground transition-smooth hover:shadow-glow"
+          className="inline-flex items-center justify-center bg-primary px-8 py-4 font-display text-base text-primary-foreground transition-smooth"
         >
           Početna strana
         </Link>
         <a
           href="/#kontakt"
-          className="inline-flex items-center justify-center border border-secondary-foreground/40 px-8 py-4 font-display text-sm uppercase tracking-wider transition-smooth hover:border-brand-green hover:text-brand-green"
+          className="inline-flex items-center justify-center border border-secondary-foreground/40 px-8 py-4 font-display text-base transition-smooth hover:border-brand-green hover:text-brand-green"
         >
           Kontakt
         </a>
@@ -39,6 +39,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "theme-color", content: "#060606" },
       { title: "Trgoimpex W — Građevinska kompanija" },
       {
         name: "description",

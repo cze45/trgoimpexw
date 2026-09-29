@@ -32,16 +32,16 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-20">
-        <a href="/" aria-label="Trgoimpex W — početna strana" className="flex items-center group">
+        <a href="/" aria-label="Trgoimpex W — početna strana" className="flex items-center">
           <img
             src={logoIcon}
             alt="Trgoimpex W ikonica"
-            className="sm:hidden h-12 w-12 object-contain group-hover:rotate-3 transition-smooth"
+            className="sm:hidden h-12 w-12 object-contain"
           />
           <img
             src={logoMain}
             alt="Trgoimpex W logotip"
-            className="hidden sm:block h-14 w-auto object-contain group-hover:scale-[1.03] transition-smooth"
+            className="hidden sm:block h-14 w-auto object-contain"
           />
           <span className="sr-only">Trgoimpex W</span>
         </a>
@@ -51,7 +51,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="text-sm font-medium uppercase tracking-wider text-white/80 hover:text-white transition-smooth nav-link"
+              className="text-base font-medium text-white/80 hover:text-white transition-smooth nav-link"
             >
               {l.label}
             </a>
@@ -69,6 +69,7 @@ export function Navbar() {
       </div>
 
       <div
+        inert={!open}
         className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
           open ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"
         }`}
@@ -83,7 +84,7 @@ export function Navbar() {
                   setActive(i);
                   setTimeout(() => setOpen(false), 400);
                 }}
-                className={`uppercase tracking-wider text-sm font-medium py-3 px-3 transition-smooth ${
+                className={`text-base font-medium py-3 px-3 transition-smooth ${
                   active === i
                     ? "bg-brand-green text-white"
                     : "text-secondary-foreground/90 hover:text-white"

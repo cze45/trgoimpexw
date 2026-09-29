@@ -99,6 +99,19 @@
 
   html {
     scroll-behavior: smooth;
+    /* Fiksni meni (h-20) ne sme da pokrije element u fokusu */
+    scroll-padding-top: 6rem;
+  }
+
+  /* Sekcije i dalje počinju od vrha ekrana kad se klikne link u meniju */
+  section[id] {
+    scroll-margin-top: -6rem;
+  }
+
+  /* Jasan okvir fokusa sa tastature — boja teksta, pa se vidi i na tamnoj i na svetloj pozadini */
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
   }
 
   body {

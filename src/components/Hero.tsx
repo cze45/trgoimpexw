@@ -1,5 +1,4 @@
 import heroImage from "@/assets/hero-construction.jpg";
-import { ArrowRight } from "lucide-react";
 import { TraceOutline } from "./TraceOutline";
 
 export function Hero() {
@@ -36,15 +35,14 @@ export function Hero() {
             <a
               href="#kontakt"
               data-trace
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-3 md:py-4 font-display uppercase tracking-wider text-sm md:text-base transition-smooth"
+              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-3 md:py-4 font-display text-base md:text-lg transition-smooth"
             >
               <TraceOutline />
               Zatražite ponudu
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
             </a>
             <a
               href="#projekti"
-              className="inline-flex items-center justify-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-3 md:py-4 font-display uppercase tracking-wider text-sm md:text-base hover:bg-secondary-foreground hover:text-secondary transition-smooth"
+              className="inline-flex items-center justify-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-3 md:py-4 font-display text-base md:text-lg hover:bg-secondary-foreground hover:text-secondary transition-smooth"
             >
               Naši projekti
             </a>
@@ -63,7 +61,7 @@ export function Hero() {
               <div className="font-display text-4xl text-secondary-foreground md:text-secondary-foreground/90 leading-none">
                 {s.n}
               </div>
-              <div className="text-secondary-foreground/85 md:text-secondary-foreground/80 text-xs uppercase tracking-wider mt-3 md:mt-2 leading-tight break-words">
+              <div className="text-secondary-foreground/85 md:text-secondary-foreground/80 text-sm mt-3 md:mt-2 leading-tight break-words">
                 {s.l}
               </div>
               <span className="absolute top-2 right-2 md:top-3 md:right-3 w-1.5 h-1.5 bg-brand-green" />
