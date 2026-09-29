@@ -59,7 +59,11 @@ export function Navbar() {
         </nav>
 
         <button
-          onClick={() => setOpen(!open)}
+          onClick={() => {
+            // Pri svakom otvaranju meni kreće bez istaknute stavke
+            if (!open) setActive(null);
+            setOpen(!open);
+          }}
           className="md:hidden text-secondary-foreground p-2"
           aria-label={open ? "Zatvori meni" : "Otvori meni"}
           aria-expanded={open}

@@ -137,7 +137,7 @@ export function Contact() {
               className="w-full group relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth disabled:opacity-60"
             >
               <TraceOutline />
-              {loading ? "Šaljem..." : "Pošalji upit"}
+              {loading ? "Šaljem…" : "Pošalji upit"}
               <Send className="w-4 h-4" />
             </button>
           </div>
