@@ -81,7 +81,7 @@ function Privatnost() {
         <div className="mt-12">
           <Link
             to="/"
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm hover:shadow-glow transition-smooth"
+            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth"
           >
             Nazad na početnu
           </Link>

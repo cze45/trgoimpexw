@@ -1,4 +1,4 @@
-import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { TraceOutline } from "./TraceOutline";
 
 const points = [
@@ -17,7 +17,7 @@ export function About() {
             <div className="absolute inset-0 diagonal-stripes opacity-100" />
             {/* TODO: zameniti pravom fotografijom (tim ili mehanizacija na gradilištu) */}
             <div className="absolute inset-4 bg-[oklch(0.18_0_0)] flex flex-col items-center justify-center text-center p-8">
-              <span className="text-white/80 text-sm uppercase tracking-widest">
+              <span className="text-white/80 text-sm">
                 Mesto za fotografiju
               </span>
               <span className="text-white/50 text-xs mt-2">
@@ -29,7 +29,7 @@ export function About() {
 
         <div>
           <h2 className="font-display text-4xl md:text-5xl font-semibold md:font-normal mb-6">
-            Više od <span className="text-primary underline decoration-brand-green decoration-4 underline-offset-4">25 godina</span> na terenu<span className="text-[#BE0000]">.</span>
+            Više od <span className="text-primary underline decoration-brand-green decoration-4 underline-offset-4">25 godina</span> na terenu.
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
@@ -52,11 +52,10 @@ export function About() {
           <a
             href="#kontakt"
             data-trace
-            className="mt-8 group relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth hover:scale-[1.02] hover:shadow-glow-green active:scale-[0.98]"
+            className="mt-8 group relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth"
           >
             <TraceOutline />
             Zatražite ponudu
-            <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
         </div>
       </div>

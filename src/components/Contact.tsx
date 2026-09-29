@@ -45,7 +45,7 @@ export function Contact() {
         <div>
           <h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal mb-6">
             Imate <span className="text-brand-green">projekat</span>?
-            <br />Razgovarajmo<span className="text-brand-red">.</span>
+            <br />Razgovarajmo.
           </h2>
           <p className="text-secondary-foreground/80 text-lg md:text-xl mb-12 max-w-md">
             Pošaljite nam upit ili nas kontaktirajte direktno. Odgovaramo u roku od
@@ -72,7 +72,7 @@ export function Contact() {
                 label: "Email",
                 value: (
                   <>
-                    trgoimpexw@gmail<span className="text-[#BE0000]">.</span>com
+                    trgoimpexw@gmail.com
                   </>
                 ),
                 href: "mailto:trgoimpexw@gmail.com",
@@ -82,13 +82,13 @@ export function Contact() {
                 key={c.label}
                 href={c.href}
                 {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="flex items-start gap-5 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-green"
+                className="flex items-start gap-5 group"
               >
                 <div className="w-14 h-14 bg-secondary-foreground/10 border border-secondary-foreground/30 flex items-center justify-center shrink-0 group-hover:border-brand-green transition-smooth">
                   <c.icon className="w-6 h-6 text-secondary-foreground" />
                 </div>
                 <div>
-                  <div className="text-sm uppercase tracking-widest text-secondary-foreground/70 mb-1">
+                  <div className="text-sm text-secondary-foreground/70 mb-1">
                     {c.label}
                   </div>
                   <div className="font-display text-xl md:text-2xl group-hover:text-brand-green transition-smooth">
@@ -108,11 +108,11 @@ export function Contact() {
           <h3 className="font-display text-2xl mb-6">Pošaljite upit</h3>
           <div className="space-y-4">
             <div className="grid sm:grid-cols-2 gap-4">
-              <Field label="Ime i prezime" name="name" />
-              <Field label="Telefon" name="phone" />
+              <Field label="Ime i prezime" name="name" autoComplete="name" />
+              <Field label="Telefon" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
             </div>
-            <Field label="Email" name="email" type="email" />
-            <Field label="Vrsta projekta" name="project" />
+            <Field label="Email" name="email" type="email" autoComplete="email" spellCheck={false} />
+            <Field label="Vrsta projekta" name="project" autoComplete="off" />
             <div className="relative">
               <textarea
                 id="contact-message"
@@ -125,7 +125,7 @@ export function Contact() {
               />
               <label
                 htmlFor="contact-message"
-                className="floating-label absolute left-4 top-3.5 text-muted-foreground text-xs uppercase tracking-widest pointer-events-none transition-smooth origin-left"
+                className="floating-label absolute left-4 top-3.5 text-muted-foreground text-sm pointer-events-none transition-smooth origin-left"
               >
                 Poruka
               </label>
@@ -134,11 +134,11 @@ export function Contact() {
               type="submit"
               disabled={loading}
               data-trace
-              className="w-full group relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display uppercase tracking-wider text-sm transition-smooth hover:scale-[1.01] hover:shadow-glow-green active:scale-[0.99] disabled:opacity-60 disabled:hover:scale-100 disabled:hover:shadow-none"
+              className="w-full group relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth disabled:opacity-60"
             >
               <TraceOutline />
               {loading ? "Šaljem..." : "Pošalji upit"}
-              <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <Send className="w-4 h-4" />
             </button>
           </div>
         </form>
@@ -152,10 +152,16 @@ function Field({
   label,
   name,
   type = "text",
+  autoComplete,
+  inputMode,
+  spellCheck,
 }: {
   label: string;
   name: string;
   type?: string;
+  autoComplete?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+  spellCheck?: boolean;
 }) {
   const id = `contact-${name}`;
   return (
@@ -164,13 +170,16 @@ function Field({
         id={id}
         type={type}
         name={name}
+        autoComplete={autoComplete}
+        inputMode={inputMode}
+        spellCheck={spellCheck}
         required
         placeholder=" "
         className="floating-input w-full bg-muted border border-border px-4 pt-6 pb-2 focus:border-primary focus:outline-none transition-smooth"
       />
       <label
         htmlFor={id}
-        className="floating-label absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground text-xs uppercase tracking-widest pointer-events-none transition-smooth origin-left"
+        className="floating-label absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground text-sm pointer-events-none transition-smooth origin-left"
       >
         {label}
       </label>
