@@ -1,8 +1,18 @@
-import heroImage from "@/assets/hero-construction.jpg";
+import heroImage from "@/assets/hero-earthworks-v2.webp";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 export function Hero() {
   return (
     <section id="pocetna" className="hero">
+      <img
+        className="hero-background"
+        src={heroImage}
+        alt=""
+        aria-hidden="true"
+        width={1954}
+        height={805}
+        fetchPriority="high"
+        decoding="async"
+      />
       <div className="container">
         <div className="hero-layout">
           <div className="hero-copy">
@@ -24,31 +34,6 @@ export function Hero() {
                 Naši projekti <ArrowDownRight size={19} />
               </a>
             </div>
-          </div>
-          <div className="hero-visual">
-            <img
-              src={heroImage}
-              alt="Gradilište Trgoimpex W"
-              width={1920}
-              height={1280}
-              fetchPriority="high"
-            />
-            <div className="hero-corner" aria-hidden="true" />
-            <svg
-              className="road-motif"
-              viewBox="0 0 600 105"
-              preserveAspectRatio="none"
-              aria-hidden="true"
-            >
-              <path d="M0 75L55 10H460L280 105H0Z" fill="#1B2E3C" />
-              <path d="M75 105C220 55 275 55 460 10C330 56 250 75 185 105Z" fill="#FEFEFE" />
-              <path d="M505 10H600L540 75H390Z" fill="#6B0F1A" />
-              <path
-                d="M235 94L260 85M285 76L310 67M334 58L359 49M381 40L406 31"
-                stroke="#FEFEFE"
-                strokeWidth="4"
-              />
-            </svg>
           </div>
         </div>
         <div className="hero-stats">

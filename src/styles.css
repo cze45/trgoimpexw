@@ -226,26 +226,55 @@
   border: 0;
 }
 .hero {
-  padding-block: 96px 0;
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: calc(100svh - 88px);
+  padding: 96px 0 0;
+  overflow: hidden;
+  background: #1b2e3c;
+  color: #fefefe;
+}
+.hero-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    90deg,
+    rgb(13 25 36 / 83%) 0%,
+    rgb(13 25 36 / 52%) 48%,
+    rgb(13 25 36 / 12%) 100%
+  );
+}
+.hero > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .hero-layout {
-  display: grid;
-  grid-template-columns: 1.04fr 1fr;
-  gap: 34px;
-  align-items: center;
-  min-height: 480px;
+  display: block;
+  min-height: 420px;
 }
 .hero-copy {
-  position: relative;
-  z-index: 1;
-  padding-block: 22px;
+  max-width: 650px;
+  padding-bottom: 56px;
 }
 .hero-rule {
   display: flex;
   width: 72px;
   height: 5px;
   margin-bottom: 29px;
-  background: var(--border);
+  background: rgb(254 254 254 / 35%);
 }
 .hero-rule span {
   display: block;
@@ -264,10 +293,10 @@
   display: block;
 }
 .hero h1 > span:nth-child(2) {
-  color: var(--primary);
+  color: #fefefe;
 }
 .hero-period {
-  color: var(--primary);
+  color: #fefefe;
 }
 .hero-actions {
   display: flex;
@@ -309,39 +338,11 @@
   color: var(--primary);
   border-color: var(--primary);
 }
-.hero-visual {
-  position: relative;
-  height: 480px;
-  margin-bottom: 14px;
-  background: #e5e8ec;
-}
-.hero-visual > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 35% center;
-}
-.hero-corner {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 64px;
-  height: 64px;
-  background: #fefefe;
-  clip-path: polygon(0 0, 100% 0, 100% 100%);
-}
-.road-motif {
-  position: absolute;
-  height: 90px;
-  width: calc(100% + 34px);
-  left: -34px;
-  bottom: -20px;
-}
 .hero-stats {
-  margin-top: 64px;
+  margin-top: 32px;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-block: 1px solid var(--border);
+  border-top: 1px solid rgb(254 254 254 / 30%);
 }
 .stat {
   display: flex;
@@ -359,7 +360,7 @@
   left: 0;
   height: 48%;
   top: 26%;
-  border-left: 1px solid var(--border);
+  border-left: 1px solid rgb(254 254 254 / 25%);
 }
 .stat-number {
   font:
@@ -369,7 +370,7 @@
 }
 .stat-label {
   font-size: 12px;
-  color: var(--muted-foreground);
+  color: rgb(254 254 254 / 80%);
   margin-top: 8px;
 }
 .services-section {
@@ -558,9 +559,6 @@
   .hero h1 {
     font-size: 65px;
   }
-  .hero-visual {
-    height: 440px;
-  }
   .hero-actions {
     gap: 15px;
   }
@@ -605,14 +603,20 @@
     display: inline-flex;
   }
   .hero {
-    padding-top: 30px;
+    min-height: calc(100svh - 72px);
+    padding-top: 64px;
+  }
+  .hero-background {
+    object-position: 67% center;
+  }
+  .hero::before {
+    background: rgb(13 25 36 / 65%);
   }
   .hero-layout {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 34px;
+    min-height: 350px;
   }
   .hero-copy {
-    padding: 8px 0 0;
+    padding-bottom: 32px;
   }
   .hero-rule {
     margin-bottom: 24px;
@@ -635,23 +639,6 @@
   .text-link {
     font-size: 12px;
   }
-  .hero-visual {
-    height: 260px;
-    margin-bottom: 0;
-  }
-  .hero-visual > img {
-    object-position: center 40%;
-  }
-  .road-motif {
-    height: 65px;
-    width: 100%;
-    left: 0;
-    bottom: -12px;
-  }
-  .hero-corner {
-    width: 40px;
-    height: 40px;
-  }
   .hero-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: 38px;
@@ -663,7 +650,7 @@
     padding-left: 0;
   }
   .stat:nth-child(n + 3) {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid rgb(254 254 254 / 25%);
   }
   .stat:nth-child(3):before {
     display: none;
@@ -724,4 +711,12 @@
     transition-duration: 0s !important;
     animation-duration: 0s !important;
   }
+}
+
+.hero .text-link {
+  color: #fefefe;
+  border-bottom-color: rgb(254 254 254 / 55%);
+}
+.hero .text-link:hover {
+  border-bottom-color: #fefefe;
 }
