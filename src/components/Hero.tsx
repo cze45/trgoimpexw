@@ -1,4 +1,4 @@
-import heroImage from "@/assets/hero-earthworks-v2.webp";
+import heroImage from "@/assets/works/hero-most-edited.webp";
 import { ArrowDownRight, ArrowRight } from "lucide-react";
 export function Hero() {
   return (
@@ -8,8 +8,8 @@ export function Hero() {
         src={heroImage}
         alt=""
         aria-hidden="true"
-        width={1954}
-        height={805}
+        width={1672}
+        height={941}
         fetchPriority="high"
         decoding="async"
       />

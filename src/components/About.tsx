@@ -1,4 +1,5 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import excavatorPhoto from "@/assets/works/iskopi-bager.webp";
 
 const points = [
   "Tim iskusnih građevinskih inženjera",
@@ -12,14 +13,15 @@ export function About() {
     <section id="o-nama" className="section-space bg-background about-section">
       <div className="container grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="relative">
-          <div className="about-placeholder">
-            {/* TODO: zameniti pravom fotografijom (tim ili mehanizacija na gradilištu) */}
-            <div className="flex flex-col items-center justify-center text-center p-8">
-              <span className="text-muted-foreground text-sm">Mesto za fotografiju</span>
-              <span className="text-muted-foreground text-xs mt-2">
-                tim ili mehanizacija na gradilištu
-              </span>
-            </div>
+          <div className="about-photo">
+            <img
+              src={excavatorPhoto}
+              alt="Bager na zemljanim radovima uz most"
+              width={1280}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 

@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
+import bridgePhoto from "@/assets/works/asfaltiranje-mosta.webp";
+import steelPhoto from "@/assets/works/celicna-konstrukcija.webp";
+import asphaltPhoto from "@/assets/works/industrijski-plato.webp";
+import fencePhoto from "@/assets/works/zicana-ograda.webp";
 import {
   Carousel,
   CarouselContent,
@@ -11,18 +15,35 @@ import {
 const projects = [
   {
     cat: "Infrastruktura",
+    img: bridgePhoto,
+    alt: "Asfaltiranje kolovoza na mostu sa zaštitnim ogradama",
+    position: "center 60%",
     title: "Naziv projekta",
     desc: "Kratak opis radova - lokacija, obim, godina.",
   },
   {
     cat: "Visokogradnja",
+    img: steelPhoto,
+    alt: "Radnici montiraju čeličnu konstrukciju hale",
+    position: "center",
     title: "Naziv projekta",
     desc: "Kratak opis radova - lokacija, obim, godina.",
   },
   {
     cat: "Niskogradnja",
+    img: asphaltPhoto,
+    alt: "Asfaltirani industrijski plato između hala sa obeleženim parking mestima",
+    position: "center",
     title: "Naziv projekta",
     desc: "Kratak opis radova - lokacija, obim, godina.",
+  },
+  {
+    cat: "Ograđivanje",
+    title: "Žičana ograda",
+    desc: "Žičana mreža na betonskim stubovima sa kosnicima.",
+    img: fencePhoto,
+    alt: "Žičana ograda na betonskim stubovima sa kosnicima i bodljikavom žicom",
+    position: "center 55%",
   },
 ];
 
@@ -31,11 +52,16 @@ type Project = (typeof projects)[number];
 function ProjectCard({ p }: { p: Project }) {
   return (
     <article className="project-card">
-      <div className="project-placeholder">
-        <span>FOTOGRAFIJA PROJEKTA</span>
-        <span className="placeholder-cross" aria-hidden="true">
-          +
-        </span>
+      <div className="project-photo">
+        <img
+          src={p.img}
+          alt={p.alt}
+          width={1600}
+          height={1200}
+          loading="lazy"
+          decoding="async"
+          style={{ objectPosition: p.position }}
+        />
       </div>
       <div className="project-meta">
         <span>{p.cat}</span>
@@ -118,7 +144,7 @@ export function Projects() {
         </div>
 
         {/* Tablet i desktop - mreža kao ranije */}
-        <div className="hidden md:grid grid-cols-3 gap-7">
+        <div className="hidden md:grid grid-cols-2 gap-x-8 gap-y-12">
           {projects.map((p, i) => (
             <ProjectCard key={i} p={p} />
           ))}
