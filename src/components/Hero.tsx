@@ -1,72 +1,66 @@
 import heroImage from "@/assets/hero-construction.jpg";
-import { ArrowRight } from "lucide-react";
-import { TraceOutline } from "./TraceOutline";
-
+import { ArrowDownRight, ArrowRight } from "lucide-react";
 export function Hero() {
   return (
-    <section id="pocetna" className="relative min-h-screen flex items-center overflow-hidden">
-      <img
-        src={heroImage}
-        alt="Gradilište Trgoimpex W"
-        fetchPriority="high"
-        width={1920}
-        height={1280}
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-hero" />
-      <div className="absolute inset-0 bg-secondary/60" />
-
-      {/* Subtle accent line */}
-      <div className="absolute top-0 right-0 w-px h-full bg-white/15" />
-
-      <div className="container mx-auto px-6 relative z-10 pt-24">
-        <div className="w-full text-center py-8 md:py-12 flex flex-col items-center gap-10 md:gap-11">
-          {/* Na telefonu tri reda, veće i kontrastnije; od tableta naviše kao ranije */}
-          <h1 className="font-display text-white md:text-secondary-foreground m-0 drop-shadow-[0_4px_16px_rgba(0,0,0,0.6)] md:drop-shadow-none">
-            <span className="block text-[80px] md:text-8xl lg:text-9xl leading-[1.1] md:leading-[1.05] text-center md:text-balance">
-              <span className="block md:inline">Temelj</span>{" "}
-              <span className="block md:inline">ograda</span>{" "}
-              <span className="block md:inline">
-                asfalt<span className="text-brand-red">.</span>
+    <section id="pocetna" className="hero">
+      <div className="container">
+        <div className="hero-layout">
+          <div className="hero-copy">
+            <div className="hero-rule" aria-hidden="true">
+              <span />
+            </div>
+            <h1>
+              <span>Temelj</span>
+              <span>ograda</span>
+              <span>
+                asfalt<span className="hero-period">.</span>
               </span>
-            </span>
-          </h1>
-
-          <div className="flex flex-col md:flex-row items-stretch justify-center gap-4 w-full max-w-xs md:max-w-none md:w-auto">
-            <a
-              href="#kontakt"
-              data-trace
-              className="group relative inline-flex items-center justify-center gap-3 bg-brand-green text-white opacity-90 px-9 py-3 md:py-4 font-display text-base md:text-lg transition-smooth"
+            </h1>
+            <div className="hero-actions">
+              <a href="#kontakt" className="button-primary">
+                Zatražite ponudu <ArrowRight size={19} />
+              </a>
+              <a href="#projekti" className="text-link">
+                Naši projekti <ArrowDownRight size={19} />
+              </a>
+            </div>
+          </div>
+          <div className="hero-visual">
+            <img
+              src={heroImage}
+              alt="Gradilište Trgoimpex W"
+              width={1920}
+              height={1280}
+              fetchPriority="high"
+            />
+            <div className="hero-corner" aria-hidden="true" />
+            <svg
+              className="road-motif"
+              viewBox="0 0 600 105"
+              preserveAspectRatio="none"
+              aria-hidden="true"
             >
-              <TraceOutline />
-              Zatražite ponudu
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
-            </a>
-            <a
-              href="#projekti"
-              className="inline-flex items-center justify-center gap-3 border-2 border-secondary-foreground text-secondary-foreground px-9 py-3 md:py-4 font-display text-base md:text-lg hover:bg-secondary-foreground hover:text-secondary transition-smooth"
-            >
-              Naši projekti
-            </a>
+              <path d="M0 75L55 10H460L280 105H0Z" fill="#1B2E3C" />
+              <path d="M75 105C220 55 275 55 460 10C330 56 250 75 185 105Z" fill="#FEFEFE" />
+              <path d="M505 10H600L540 75H390Z" fill="#6B0F1A" />
+              <path
+                d="M235 94L260 85M285 76L310 67M334 58L359 49M381 40L406 31"
+                stroke="#FEFEFE"
+                strokeWidth="4"
+              />
+            </svg>
           </div>
         </div>
-
-        {/* Stats strip */}
-        <div className="mt-14 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 border border-white/10 max-w-4xl mx-auto opacity-90">
+        <div className="hero-stats">
           {[
             { n: "25+", l: "Godina iskustva" },
             { n: "180+", l: "Završenih projekata" },
             { n: "15+", l: "Stručnih radnika" },
             { n: "24h", l: "Odgovor na upit" },
           ].map((s) => (
-            <div key={s.l} className="bg-secondary/80 backdrop-blur-sm p-6 relative min-w-0">
-              <div className="font-display text-4xl text-secondary-foreground md:text-secondary-foreground/90 leading-none">
-                {s.n}
-              </div>
-              <div className="text-secondary-foreground/85 md:text-secondary-foreground/80 text-sm mt-3 md:mt-2 leading-tight break-words">
-                {s.l}
-              </div>
-              <span className="absolute top-2 right-2 md:top-3 md:right-3 w-1.5 h-1.5 bg-brand-green" />
+            <div className="stat" key={s.l}>
+              <span className="stat-number">{s.n}</span>
+              <span className="stat-label">{s.l}</span>
             </div>
           ))}
         </div>

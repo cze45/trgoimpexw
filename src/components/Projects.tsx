@@ -1,33 +1,28 @@
 import { useEffect, useState } from "react";
+import { ArrowUpRight } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   type CarouselApi,
 } from "@/components/ui/carousel";
-import bridge from "@/assets/project-bridge.jpg";
-import building from "@/assets/project-building.jpg";
-import road from "@/assets/project-road.jpg";
 
-// TODO: zameniti pravim projektima — nazivi, lokacije, obim i godina.
+// TODO: zameniti pravim projektima - nazivi, lokacije, obim i godina.
 const projects = [
   {
-    img: bridge,
     cat: "Infrastruktura",
     title: "Naziv projekta",
-    desc: "Kratak opis radova — lokacija, obim, godina.",
+    desc: "Kratak opis radova - lokacija, obim, godina.",
   },
   {
-    img: building,
     cat: "Visokogradnja",
     title: "Naziv projekta",
-    desc: "Kratak opis radova — lokacija, obim, godina.",
+    desc: "Kratak opis radova - lokacija, obim, godina.",
   },
   {
-    img: road,
     cat: "Niskogradnja",
     title: "Naziv projekta",
-    desc: "Kratak opis radova — lokacija, obim, godina.",
+    desc: "Kratak opis radova - lokacija, obim, godina.",
   },
 ];
 
@@ -35,26 +30,19 @@ type Project = (typeof projects)[number];
 
 function ProjectCard({ p }: { p: Project }) {
   return (
-    <article className="relative overflow-hidden bg-card aspect-[4/5] shadow-industrial">
-      <img
-        src={p.img}
-        alt={p.title}
-        width={1280}
-        height={896}
-        loading="lazy"
-        decoding="async"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary via-secondary/60 to-transparent" />
-
-      <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-3 py-1 text-sm font-display">
-        {p.cat}
+    <article className="project-card">
+      <div className="project-placeholder">
+        <span>FOTOGRAFIJA PROJEKTA</span>
+        <span className="placeholder-cross" aria-hidden="true">
+          +
+        </span>
       </div>
-
-      <div className="absolute bottom-0 left-0 right-0 p-6">
-        <h3 className="font-display text-2xl mb-2">{p.title}</h3>
-        <p className="text-secondary-foreground/80 text-sm">{p.desc}</p>
+      <div className="project-meta">
+        <span>{p.cat}</span>
+        <ArrowUpRight size={17} aria-hidden="true" />
       </div>
+      <h3>{p.title}</h3>
+      <p>{p.desc}</p>
     </article>
   );
 }
@@ -80,20 +68,20 @@ export function Projects() {
   }, [api]);
 
   return (
-    <section id="projekti" className="py-20 md:py-24 bg-secondary text-secondary-foreground">
-      <div className="container mx-auto px-6">
+    <section id="projekti" className="section-space projects-section">
+      <div className="container">
         <div className="flex flex-wrap items-end justify-between mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal mb-4">
-              Odabrani <span className="text-brand-green">projekti</span>
+            <h2 className="section-title mb-4">
+              Odabrani <span className="text-primary">projekti</span>
             </h2>
-            <p className="text-secondary-foreground/70 text-lg">
-              Vaši projekti — slike i opisi se dodaju ovde.
+            <p className="text-muted-foreground text-lg">
+              Vaši projekti - slike i opisi se dodaju ovde.
             </p>
           </div>
         </div>
 
-        {/* Mobilni karusel — prevlačenje, indikatori u Instagram stilu */}
+        {/* Mobilni karusel - prevlačenje, indikatori u Instagram stilu */}
         <div className="md:hidden">
           <Carousel setApi={setApi} opts={{ align: "start" }}>
             <CarouselContent className="-ml-6">
@@ -120,9 +108,7 @@ export function Projects() {
                 >
                   <span
                     className={`block rounded-full transition-all duration-300 ${
-                      active
-                        ? "w-2 h-2 bg-secondary-foreground/60"
-                        : "w-5 h-1 bg-secondary-foreground/30"
+                      active ? "w-2 h-2 bg-primary" : "w-5 h-1 bg-border"
                     }`}
                   />
                 </button>
@@ -131,8 +117,8 @@ export function Projects() {
           </div>
         </div>
 
-        {/* Tablet i desktop — mreža kao ranije */}
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Tablet i desktop - mreža kao ranije */}
+        <div className="hidden md:grid grid-cols-3 gap-7">
           {projects.map((p, i) => (
             <ProjectCard key={i} p={p} />
           ))}

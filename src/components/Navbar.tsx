@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logoMain from "@/assets/logo-main.png";
-import logoIcon from "@/assets/logo-icon.png";
-
+import { Brand } from "./Brand";
 const links = [
   { href: "/#pocetna", label: "Početna" },
   { href: "/#usluge", label: "Usluge" },
@@ -10,96 +8,61 @@ const links = [
   { href: "/#o-nama", label: "O nama" },
   { href: "/#kontakt", label: "Kontakt" },
 ];
-
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<number | null>(null);
-
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    const close = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const media = window.matchMedia("(min-width: 768px)");
+    const resize = () => {
+      if (media.matches) setOpen(false);
+    };
+    window.addEventListener("keydown", close);
+    media.addEventListener("change", resize);
+    return () => {
+      window.removeEventListener("keydown", close);
+      media.removeEventListener("change", resize);
+    };
   }, []);
-
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-smooth ${
-        scrolled
-          ? "bg-secondary/95 backdrop-blur-md border-b border-primary/20"
-          : "bg-transparent"
-      }`}
-    >
-      <div className="container mx-auto px-6 flex items-center justify-between h-20">
-        <a href="/" aria-label="Trgoimpex W — početna strana" className="flex items-center">
-          <img
-            src={logoIcon}
-            alt="Trgoimpex W ikonica"
-            className="sm:hidden h-12 w-12 object-contain"
-          />
-          <img
-            src={logoMain}
-            alt="Trgoimpex W logotip"
-            className="hidden sm:block h-14 w-auto object-contain"
-          />
-          <span className="sr-only">Trgoimpex W</span>
+    <header className="site-header">
+      <div className="container nav-inner">
+        <a href="/" aria-label="Trgoimpex W - početna strana">
+          <Brand />
         </a>
-
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="desktop-nav" aria-label="Glavna navigacija">
           {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-base font-medium text-white/80 hover:text-white transition-smooth nav-link"
-            >
+            <a key={l.href} href={l.href}>
               {l.label}
             </a>
           ))}
         </nav>
-
         <button
-          onClick={() => {
-            // Pri svakom otvaranju meni kreće bez istaknute stavke
-            if (!open) setActive(null);
-            setOpen(!open);
-          }}
-          className="md:hidden text-secondary-foreground p-2"
+          type="button"
+          className="menu-toggle"
           aria-label={open ? "Zatvori meni" : "Otvori meni"}
           aria-expanded={open}
+          aria-controls="mobile-navigation"
+          onClick={() => setOpen(!open)}
         >
           {open ? <X /> : <Menu />}
         </button>
       </div>
-
-      <div
-        inert={!open}
-        className={`md:hidden overflow-hidden transition-all duration-300 ease-out ${
-          open ? "max-h-96 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-2"
-        }`}
+      <nav
+        id="mobile-navigation"
+        className="mobile-nav"
+        aria-label="Mobilna navigacija"
+        hidden={!open}
       >
-        <div className="bg-secondary border-t border-primary/20">
-          <nav className="container mx-auto px-6 py-4 flex flex-col gap-1">
-            {links.map((l, i) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => {
-                  setActive(i);
-                  setTimeout(() => setOpen(false), 400);
-                }}
-                className={`text-base font-medium py-3 px-3 transition-smooth ${
-                  active === i
-                    ? "bg-brand-green text-white"
-                    : "text-secondary-foreground/90 hover:text-white"
-                }`}
-              >
-                {l.label}
-              </a>
-            ))}
-          </nav>
+        <div className="container">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+              {l.label}
+            </a>
+          ))}
         </div>
-      </div>
+      </nav>
     </header>
   );
 }
