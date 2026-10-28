@@ -8,9 +8,9 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-function ProjectCard({ p }: { p: Project }) {
+function ProjectCard({ p, overlay = false }: { p: Project; overlay?: boolean }) {
   return (
-    <article className="project-card">
+    <article className={`project-card ${overlay ? "project-home-card" : ""}`}>
       <a
         className="project-card-link"
         href={`/projekti/${p.slug}`}
@@ -27,15 +27,17 @@ function ProjectCard({ p }: { p: Project }) {
             style={{ objectPosition: p.position }}
           />
         </div>
-        <div className="project-meta">
-          <span>{p.cat}</span>
-          <ArrowUpRight size={17} aria-hidden="true" />
+        <div className="project-caption">
+          <div className="project-meta">
+            <span>{p.cat}</span>
+            <ArrowUpRight size={17} aria-hidden="true" />
+          </div>
+          <h3>{p.title}</h3>
+          <p>{p.desc}</p>
+          <span className="project-read-more">
+            Pročitaj opis projekta <ArrowUpRight size={16} aria-hidden="true" />
+          </span>
         </div>
-        <h3>{p.title}</h3>
-        <p>{p.desc}</p>
-        <span className="project-read-more">
-          Pročitaj opis projekta <ArrowUpRight size={16} aria-hidden="true" />
-        </span>
       </a>
     </article>
   );
@@ -82,7 +84,7 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
             <CarouselContent className="-ml-6">
               {projects.map((p, i) => (
                 <CarouselItem key={i} className="pl-6">
-                  <ProjectCard p={p} />
+                  <ProjectCard p={p} overlay={!standalone} />
                 </CarouselItem>
               ))}
             </CarouselContent>
@@ -121,7 +123,7 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
           }
         >
           {projects.map((p, i) => (
-            <ProjectCard key={i} p={p} />
+            <ProjectCard key={i} p={p} overlay={!standalone} />
           ))}
         </div>
       </div>
