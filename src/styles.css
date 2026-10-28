@@ -1004,9 +1004,9 @@
   inset: 0;
   background: linear-gradient(
     0deg,
-    rgb(10 21 32 / 96%) 0%,
-    rgb(10 21 32 / 78%) 30%,
-    rgb(10 21 32 / 5%) 72%
+    rgb(10 21 32 / 86%) 0%,
+    rgb(10 21 32 / 35%) 22%,
+    rgb(10 21 32 / 0%) 52%
   );
   z-index: 1;
   pointer-events: none;
@@ -1067,4 +1067,8 @@
   .project-home-card h3 {
     font-size: 24px;
   }
+}
+
+.project-home-card .project-caption h3 {
+  margin-top: 0;
 }

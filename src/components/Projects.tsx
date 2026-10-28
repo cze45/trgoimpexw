@@ -28,15 +28,21 @@ function ProjectCard({ p, overlay = false }: { p: Project; overlay?: boolean }) 
           />
         </div>
         <div className="project-caption">
-          <div className="project-meta">
-            <span>{p.cat}</span>
-            <ArrowUpRight size={17} aria-hidden="true" />
-          </div>
+          {!overlay && (
+            <div className="project-meta">
+              <span>{p.cat}</span>
+              <ArrowUpRight size={17} aria-hidden="true" />
+            </div>
+          )}
           <h3>{p.title}</h3>
-          <p>{p.desc}</p>
-          <span className="project-read-more">
-            Pročitaj opis projekta <ArrowUpRight size={16} aria-hidden="true" />
-          </span>
+          {!overlay && (
+            <>
+              <p>{p.desc}</p>
+              <span className="project-read-more">
+                Pročitaj opis projekta <ArrowUpRight size={16} aria-hidden="true" />
+              </span>
+            </>
+          )}
         </div>
       </a>
     </article>
