@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 import {
   Carousel,
@@ -71,7 +71,10 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
   }, [api]);
 
   return (
-    <section id="projekti" className="section-space projects-section">
+    <section
+      id="projekti"
+      className={`section-space projects-section ${standalone ? "" : "projects-featured"}`}
+    >
       <div className="container">
         <div className="flex flex-wrap items-end justify-between mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
@@ -85,7 +88,7 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
         </div>
 
         {/* Mobilni karusel - prevlačenje, indikatori u Instagram stilu */}
-        <div className={standalone ? "hidden" : "md:hidden"}>
+        <div className={standalone ? "hidden" : ""}>
           <Carousel setApi={setApi} opts={{ align: "start" }}>
             <CarouselContent className="-ml-6">
               {projects.map((p, i) => (
@@ -97,37 +100,51 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
           </Carousel>
 
           {/* Aktivni indikator postaje crveni krug */}
-          <div className="mt-4 flex items-center justify-center gap-1.5">
-            {Array.from({ length: count }, (_, i) => {
-              const active = i === current;
-              return (
-                <button
-                  key={i}
-                  type="button"
-                  aria-label={`Projekat ${i + 1}`}
-                  aria-current={active}
-                  onClick={() => api?.scrollTo(i)}
-                  className="h-6 flex items-center"
-                >
-                  <span
-                    className={`block rounded-full transition-all duration-300 ${
-                      active ? "w-2 h-2 bg-primary" : "w-5 h-1 bg-border"
-                    }`}
-                  />
-                </button>
-              );
-            })}
+          <div className="project-slider-controls">
+            <button
+              type="button"
+              className="project-slider-arrow"
+              aria-label="Prethodni projekat"
+              disabled={current === 0}
+              onClick={() => api?.scrollPrev()}
+            >
+              <ArrowLeft size={19} />
+            </button>
+            <div className="flex items-center gap-3">
+              {Array.from({ length: count }, (_, i) => {
+                const active = i === current;
+                return (
+                  <button
+                    key={i}
+                    type="button"
+                    aria-label={`Projekat ${i + 1}`}
+                    aria-current={active}
+                    onClick={() => api?.scrollTo(i)}
+                    className="h-6 flex items-center"
+                  >
+                    <span
+                      className={`block rounded-full transition-all duration-300 ${
+                        active ? "w-2 h-2 bg-primary" : "w-5 h-1 bg-border"
+                      }`}
+                    />
+                  </button>
+                );
+              })}
+            </div>
+            <button
+              type="button"
+              className="project-slider-arrow"
+              aria-label="Sledeći projekat"
+              disabled={current >= count - 1}
+              onClick={() => api?.scrollNext()}
+            >
+              <ArrowRight size={19} />
+            </button>
           </div>
         </div>
 
         {/* Tablet i desktop - mreža kao ranije */}
-        <div
-          className={
-            standalone
-              ? "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12"
-              : "hidden md:grid grid-cols-2 gap-x-8 gap-y-12"
-          }
-        >
+        <div className={standalone ? "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12" : "hidden"}>
           {projects.map((p, i) => (
             <ProjectCard key={i} p={p} overlay={!standalone} />
           ))}
