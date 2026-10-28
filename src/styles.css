@@ -1198,3 +1198,45 @@
     font-size: 10.5px;
   }
 }
+
+.hero::before {
+  background: linear-gradient(
+    90deg,
+    rgb(13 25 36 / 76%) 0%,
+    rgb(13 25 36 / 62%) 32%,
+    rgb(13 25 36 / 8%) 58%,
+    rgb(13 25 36 / 0%) 100%
+  );
+}
+.hero::after {
+  background: linear-gradient(0deg, rgb(13 25 36 / 65%) 0%, rgb(13 25 36 / 0%) 30%);
+}
+.hero-copy {
+  max-width: 600px;
+}
+@media (max-width: 767px) {
+  .hero {
+    padding-top: 48px;
+  }
+  .hero-background {
+    object-position: 55% center;
+  }
+  .hero::before {
+    background: linear-gradient(
+      180deg,
+      rgb(13 25 36 / 75%) 0%,
+      rgb(13 25 36 / 55%) 28%,
+      rgb(13 25 36 / 8%) 43%,
+      rgb(13 25 36 / 8%) 60%,
+      rgb(13 25 36 / 65%) 79%,
+      rgb(13 25 36 / 70%) 100%
+    );
+  }
+  .hero .hero-actions {
+    margin-top: 200px;
+  }
+}
+
+.project-slider-controls {
+  justify-content: center;
+}

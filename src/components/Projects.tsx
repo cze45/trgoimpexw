@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowUpRight, ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/data/projects";
 import {
   Carousel,
@@ -101,45 +101,22 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
 
           {/* Aktivni indikator postaje crveni krug */}
           <div className="project-slider-controls">
-            <button
-              type="button"
-              className="project-slider-arrow"
-              aria-label="Prethodni projekat"
-              disabled={current === 0}
-              onClick={() => api?.scrollPrev()}
-            >
-              <ArrowLeft size={19} />
-            </button>
             <div className="flex items-center gap-3">
-              {Array.from({ length: count }, (_, i) => {
-                const active = i === current;
-                return (
-                  <button
-                    key={i}
-                    type="button"
-                    aria-label={`Projekat ${i + 1}`}
-                    aria-current={active}
-                    onClick={() => api?.scrollTo(i)}
-                    className="h-6 flex items-center"
-                  >
-                    <span
-                      className={`block rounded-full transition-all duration-300 ${
-                        active ? "w-2 h-2 bg-primary" : "w-5 h-1 bg-border"
-                      }`}
-                    />
-                  </button>
-                );
-              })}
+              {Array.from({ length: count }, (_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  aria-label={`Projekat ${i + 1}`}
+                  aria-current={i === current}
+                  onClick={() => api?.scrollTo(i)}
+                  className="h-8 flex items-center px-1"
+                >
+                  <span
+                    className={`block rounded-full ${i === current ? "w-2 h-2 bg-primary" : "w-5 h-1 bg-border"}`}
+                  />
+                </button>
+              ))}
             </div>
-            <button
-              type="button"
-              className="project-slider-arrow"
-              aria-label="Sledeći projekat"
-              disabled={current >= count - 1}
-              onClick={() => api?.scrollNext()}
-            >
-              <ArrowRight size={19} />
-            </button>
           </div>
         </div>
 
