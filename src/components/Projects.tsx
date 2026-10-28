@@ -35,9 +35,9 @@ function ProjectCard({ p, overlay = false }: { p: Project; overlay?: boolean }) 
             </div>
           )}
           <h3>{p.title}</h3>
+          <p>{p.desc}</p>
           {!overlay && (
             <>
-              <p>{p.desc}</p>
               <span className="project-read-more">
                 Pročitaj opis projekta <ArrowUpRight size={16} aria-hidden="true" />
               </span>

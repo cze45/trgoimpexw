@@ -20,10 +20,10 @@ export function Hero() {
               <span />
             </div>
             <h1>
-              <span>Temelj</span>
-              <span>ograda</span>
+              <span>Iskopi.</span>
+              <span>Asfalt.</span>
               <span>
-                asfalt<span className="hero-period">.</span>
+                Ograde<span className="hero-period">.</span>
               </span>
             </h1>
             <div className="hero-actions">
