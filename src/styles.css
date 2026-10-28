@@ -32,7 +32,8 @@
   --color-brand-green: var(--brand-green);
   --color-brand-red: var(--brand-red);
   --font-display: "Montserrat", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Montserrat", system-ui, sans-serif;
+  --font-mono: "Montserrat", system-ui, sans-serif;
 
   --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -74,7 +75,7 @@
     margin: 0;
     background: var(--background);
     color: var(--foreground);
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
@@ -99,6 +100,12 @@
   button,
   a {
     touch-action: manipulation;
+  }
+  button,
+  input,
+  textarea,
+  select {
+    font-family: inherit;
   }
   button {
     cursor: pointer;
@@ -324,7 +331,7 @@
   border-radius: 4px;
   background: var(--primary);
   color: #fefefe;
-  font-family: "Inter", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
   line-height: 1.5;
@@ -479,7 +486,7 @@
 }
 .contact-section .contact-value {
   font:
-    500 18px/1.4 "Inter",
+    500 18px/1.4 "Montserrat",
     sans-serif;
   overflow-wrap: anywhere;
 }
