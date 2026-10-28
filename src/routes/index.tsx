@@ -10,27 +10,25 @@ import { Footer } from "@/components/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Trgoimpex W — Građevinska kompanija | Novi Sad" },
+      { title: "Trgoimpex W - Građevinska kompanija | Novi Sad" },
       {
         name: "description",
         content:
-          "Trgoimpex W — građevinska kompanija iz Novog Sada specijalizovana za niskogradnju, visokogradnju i infrastrukturne radove. Kontaktirajte nas za ponudu.",
+          "Trgoimpex W - građevinska kompanija iz Novog Sada specijalizovana za niskogradnju, visokogradnju i infrastrukturne radove. Kontaktirajte nas za ponudu.",
       },
-      { property: "og:title", content: "Trgoimpex W — Građevinska kompanija" },
+      { property: "og:title", content: "Trgoimpex W - Građevinska kompanija" },
       {
         property: "og:description",
-        content:
-          "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
+        content: "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
       },
       { property: "og:url", content: "https://trgoimpexw.lovable.app/" },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Trgoimpex W" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Trgoimpex W — Građevinska kompanija" },
+      { name: "twitter:title", content: "Trgoimpex W - Građevinska kompanija" },
       {
         name: "twitter:description",
-        content:
-          "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
+        content: "Gradimo temelje budućnosti. Niskogradnja, visokogradnja i inženjering u Srbiji.",
       },
       { property: "og:image", content: "https://trgoimpexw.lovable.app/og-image.jpg" },
       { name: "twitter:image", content: "https://trgoimpexw.lovable.app/og-image.jpg" },
@@ -60,7 +58,6 @@ export const Route = createFileRoute("/")({
         }),
       },
     ],
-
   }),
   component: Index,
 });

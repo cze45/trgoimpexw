@@ -1,5 +1,5 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { TraceOutline } from "./TraceOutline";
+import excavatorPhoto from "@/assets/works/iskopi-bager.webp";
 
 const points = [
   "Tim iskusnih građevinskih inženjera",
@@ -8,53 +8,47 @@ const points = [
   "Stroge mere zaštite na radu",
 ];
 
-export function About() {
+export function About({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   return (
-    <section id="o-nama" className="py-20 md:py-24 bg-background relative overflow-hidden">
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section id="o-nama" className="section-space bg-background about-section">
+      <div className="container grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <div className="relative">
-          <div className="aspect-square bg-secondary relative overflow-hidden shadow-industrial">
-            <div className="absolute inset-0 diagonal-stripes opacity-100" />
-            {/* TODO: zameniti pravom fotografijom (tim ili mehanizacija na gradilištu) */}
-            <div className="absolute inset-4 bg-[oklch(0.18_0_0)] flex flex-col items-center justify-center text-center p-8">
-              <span className="text-white/80 text-sm">
-                Mesto za fotografiju
-              </span>
-              <span className="text-white/50 text-xs mt-2">
-                tim ili mehanizacija na gradilištu
-              </span>
-            </div>
+          <div className="about-photo">
+            <img
+              src={excavatorPhoto}
+              alt="Bager na zemljanim radovima uz most"
+              width={1280}
+              height={960}
+              loading="lazy"
+              decoding="async"
+            />
           </div>
         </div>
 
         <div>
-          <h2 className="font-display text-4xl md:text-5xl font-semibold md:font-normal mb-6">
-            Više od <span className="text-primary underline decoration-brand-green decoration-4 underline-offset-4">25 godina</span> na terenu.
-          </h2>
+          <Heading className="section-title mb-6">
+            Više od <span className="text-primary">25 godina</span> na terenu.
+          </Heading>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
-            ograđivanje i asfaltiranje. Tim čine inženjeri, majstori i operativci sa
-            decenijskim iskustvom.
+            ograđivanje i asfaltiranje. Tim čine inženjeri, majstori i operativci sa decenijskim
+            iskustvom.
           </p>
           <p className="text-muted-foreground leading-relaxed mb-8">
             Radimo sertifikovanom mehanizacijom i držimo se rokova i budžeta.
           </p>
 
-          <ul className="grid sm:grid-cols-2 gap-3">
+          <ul className="grid md:grid-cols-2 gap-3">
             {points.map((p) => (
               <li key={p} className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-brand-green shrink-0 mt-0.5" />
+                <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-foreground">{p}</span>
               </li>
             ))}
           </ul>
 
-          <a
-            href="#kontakt"
-            data-trace
-            className="mt-8 group relative inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth"
-          >
-            <TraceOutline />
+          <a href="/kontakt" data-trace className="button-primary mt-8">
             Zatražite ponudu
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>

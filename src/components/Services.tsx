@@ -2,108 +2,105 @@ import { useState } from "react";
 import { Building2, Construction, HardHat, Truck, Grid3X3, Route, ChevronDown } from "lucide-react";
 
 const services = [
-	{
-		icon: Construction,
-		title: "Niskogradnja",
-		desc: "Putevi, mostovi, tuneli i ostala saobraćajna infrastruktura.",
-	},
-	{
-		icon: Building2,
-		title: "Visokogradnja",
-		desc: "Stambeni, poslovni i industrijski objekti.",
-	},
-	{
-		icon: Grid3X3,
-		title: "Ograđivanje",
-		desc: "Izrada i ugradnja ograda različitih vrsta — od žičanih i panelnih do drvenih i betonskih ograda.",
-	},
-	{
-		icon: Truck,
-		title: "Iskopi i radovi",
-		desc: "Zemljani radovi, iskopi, nasipanje i pripremni radovi za sve vrste gradnje.",
-	},
-	{
-		icon: Route,
-		title: "Asfaltiranje",
-		desc: "Asfaltiranje puteva, parkinga i industrijskih površina.",
-	},
-	{
-		icon: HardHat,
-		title: "Inženjering",
-		desc: "Stručni nadzor i vođenje gradnje.",
-	},
+  {
+    icon: Construction,
+    title: "Niskogradnja",
+    desc: "Putevi, mostovi, tuneli i ostala saobraćajna infrastruktura.",
+  },
+  {
+    icon: Building2,
+    title: "Visokogradnja",
+    desc: "Stambeni, poslovni i industrijski objekti.",
+  },
+  {
+    icon: Grid3X3,
+    title: "Ograđivanje",
+    desc: "Izrada i ugradnja ograda različitih vrsta - od žičanih i panelnih do drvenih i betonskih ograda.",
+  },
+  {
+    icon: Truck,
+    title: "Iskopi i radovi",
+    desc: "Zemljani radovi, iskopi, nasipanje i pripremni radovi za sve vrste gradnje.",
+  },
+  {
+    icon: Route,
+    title: "Asfaltiranje",
+    desc: "Asfaltiranje puteva, parkinga i industrijskih površina.",
+  },
+  {
+    icon: HardHat,
+    title: "Inženjering",
+    desc: "Stručni nadzor i vođenje gradnje.",
+  },
 ];
 
 export function Services() {
-	const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-	return (
-		<section id="usluge" className="py-20 md:py-24 bg-background relative">
-			<div className="container mx-auto px-6">
-				<div className="max-w-2xl mb-12 md:mb-16">
-					<h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal text-foreground mb-4">
-						Naše <span className="text-brand-green">usluge</span>
-					</h2>
-					<p className="text-muted-foreground text-lg">Ovo su poslovi koje obavljamo.</p>
-				</div>
+  return (
+    <section id="usluge" className="section-space bg-background services-section">
+      <div className="container">
+        <div className="section-heading">
+          <h2 className="section-title mb-4">
+            Naše <span className="text-primary">usluge</span>
+          </h2>
+          <p className="text-muted-foreground text-lg">Ovo su poslovi koje obavljamo.</p>
+        </div>
 
-				{/* Mobilni akordeon — samo ikonica + naslov, klik za opis */}
-				<div className="md:hidden grid grid-cols-1 border-t border-border">
-					{services.map((s, i) => {
-						const open = openIndex === i;
-						return (
-							<div key={s.title} className="border-b border-border">
-								<button
-									type="button"
-									aria-expanded={open}
-									onClick={() => setOpenIndex(open ? null : i)}
-									className="w-full flex items-center gap-5 py-6 text-left"
-								>
-									<s.icon className="w-9 h-9 shrink-0 text-primary transition-smooth" />
-									<span className="font-display text-xl text-card-foreground flex-1">
-										{s.title}
-									</span>
-									<ChevronDown
-										className={`w-6 h-6 shrink-0 text-muted-foreground transition-transform duration-300 ${
-											open ? "rotate-180 text-primary" : ""
-										}`}
-										strokeWidth={1.5}
-									/>
-								</button>
-								<div
-									className={`grid transition-[grid-template-rows] duration-300 ease-out ${
-										open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-									}`}
-								>
-									<div className="overflow-hidden">
-										<p className="pb-6 pl-14 pr-4 text-lg text-muted-foreground leading-relaxed">
-											{s.desc}
-										</p>
-									</div>
-								</div>
-							</div>
-						);
-					})}
-				</div>
+        {/* Mobilni akordeon - samo ikonica + naslov, klik za opis */}
+        <div className="md:hidden grid grid-cols-1 border-t border-border">
+          {services.map((s, i) => {
+            const open = openIndex === i;
+            return (
+              <div key={s.title} className="border-b border-border">
+                <button
+                  type="button"
+                  aria-expanded={open}
+                  aria-controls={`service-description-${i}`}
+                  onClick={() => setOpenIndex(open ? null : i)}
+                  className="w-full flex items-center gap-5 py-6 text-left"
+                >
+                  <s.icon className="w-9 h-9 shrink-0 text-primary transition-smooth" />
+                  <span className="font-display text-xl text-card-foreground flex-1">
+                    {s.title}
+                  </span>
+                  <ChevronDown
+                    className={`w-6 h-6 shrink-0 text-muted-foreground transition-transform duration-300 ${
+                      open ? "rotate-180 text-primary" : ""
+                    }`}
+                    strokeWidth={1.5}
+                  />
+                </button>
+                <div
+                  id={`service-description-${i}`}
+                  aria-hidden={!open}
+                  inert={!open}
+                  className={`grid transition-[grid-template-rows] duration-300 ease-out ${
+                    open ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+                  }`}
+                >
+                  <div className="overflow-hidden">
+                    <p className="pb-6 pl-14 pr-4 text-lg text-muted-foreground leading-relaxed">
+                      {s.desc}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
 
-				{/* Desktop — sve kartice sa opisom */}
-				<div className="hidden md:grid grid-cols-3 gap-px bg-border">
-					{services.map((s) => (
-						<div
-							key={s.title}
-							className="bg-card p-8"
-						>
-							<s.icon className="w-10 h-10 text-primary mb-4" />
-							<h3 className="font-display text-2xl mb-3 text-card-foreground">
-								{s.title}
-							</h3>
-							<p className="text-muted-foreground leading-relaxed">
-								{s.desc}
-							</p>
-						</div>
-					))}
-				</div>
-			</div>
-		</section>
-	);
+        {/* Desktop - sve kartice sa opisom */}
+        <div className="hidden md:grid grid-cols-3 gap-x-10 service-grid">
+          {services.map((s) => (
+            <div key={s.title} className="service-card">
+              <s.icon className="w-10 h-10 text-primary mb-4" />
+              <h3 className="font-display text-xl mb-3 text-card-foreground">{s.title}</h3>
+              <p className="text-muted-foreground leading-relaxed">{s.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }

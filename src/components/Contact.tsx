@@ -3,14 +3,18 @@ import { useState } from "react";
 import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { submitContactMessage } from "@/lib/contact.functions";
-import { TraceOutline } from "./TraceOutline";
 
-export function Contact() {
+export function Contact({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   const [loading, setLoading] = useState(false);
   const send = useServerFn(submitContactMessage);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (import.meta.env.VITE_REDESIGN_PREVIEW === "true") {
+      toast.info("Privatni pregled - slanje upita nije uključeno.");
+      return;
+    }
     const form = e.currentTarget;
     const fd = new FormData(form);
     setLoading(true);
@@ -28,9 +32,7 @@ export function Contact() {
       form.reset();
     } catch (err) {
       toast.error(
-        err instanceof Error && err.message
-          ? err.message
-          : "Slanje nije uspelo. Pokušajte ponovo.",
+        err instanceof Error && err.message ? err.message : "Slanje nije uspelo. Pokušajte ponovo.",
       );
     } finally {
       setLoading(false);
@@ -38,18 +40,20 @@ export function Contact() {
   };
 
   return (
-
-    <section id="kontakt" className="pt-28 md:pt-36 pb-6 md:pb-10 bg-secondary text-secondary-foreground relative">
-      <div className="absolute top-0 left-0 right-0 h-1 diagonal-stripes" />
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20">
+    <section
+      id="kontakt"
+      className="section-space contact-section bg-secondary text-secondary-foreground"
+    >
+      <div className="container grid md:grid-cols-2 gap-12 md:gap-16">
         <div>
-          <h2 className="font-display text-4xl md:text-6xl font-semibold md:font-normal mb-6">
-            Imate <span className="text-brand-green">projekat</span>?
-            <br />Razgovarajmo.
-          </h2>
-          <p className="text-secondary-foreground/80 text-lg md:text-xl mb-12 max-w-md">
-            Pošaljite nam upit ili nas kontaktirajte direktno. Odgovaramo u roku od
-            24 sata radnim danom.
+          <Heading className="section-title mb-6">
+            Imate <span className="text-inherit">projekat</span>?
+            <br />
+            Razgovarajmo.
+          </Heading>
+          <p className="text-secondary-foreground/80 text-lg mb-12 max-w-md">
+            Pošaljite nam upit ili nas kontaktirajte direktno. Odgovaramo u roku od 24 sata radnim
+            danom.
           </p>
 
           <div className="space-y-8">
@@ -70,11 +74,7 @@ export function Contact() {
               {
                 icon: Mail,
                 label: "Email",
-                value: (
-                  <>
-                    trgoimpexw@gmail.com
-                  </>
-                ),
+                value: <>trgoimpexw@gmail.com</>,
                 href: "mailto:trgoimpexw@gmail.com",
               },
             ].map((c) => (
@@ -84,34 +84,35 @@ export function Contact() {
                 {...(c.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="flex items-start gap-5 group"
               >
-                <div className="w-14 h-14 bg-secondary-foreground/10 border border-secondary-foreground/30 flex items-center justify-center shrink-0 group-hover:border-brand-green transition-smooth">
+                <div className="w-12 h-12 border border-secondary-foreground/30 flex items-center justify-center shrink-0 group-hover:border-white transition-smooth">
                   <c.icon className="w-6 h-6 text-secondary-foreground" />
                 </div>
                 <div>
-                  <div className="text-sm text-secondary-foreground/70 mb-1">
-                    {c.label}
-                  </div>
-                  <div className="font-display text-xl md:text-2xl group-hover:text-brand-green transition-smooth">
-                    {c.value}
-                  </div>
+                  <div className="text-sm text-secondary-foreground/70 mb-1">{c.label}</div>
+                  <div className="contact-value">{c.value}</div>
                 </div>
               </a>
             ))}
           </div>
-
         </div>
 
         <form
           onSubmit={handleSubmit}
-          className="bg-background text-foreground p-8 md:p-10 shadow-industrial"
+          className="contact-form bg-background text-foreground p-6 md:p-8"
         >
           <h3 className="font-display text-2xl mb-6">Pošaljite upit</h3>
           <div className="space-y-4">
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid md:grid-cols-2 gap-4">
               <Field label="Ime i prezime" name="name" autoComplete="name" />
               <Field label="Telefon" name="phone" type="tel" autoComplete="tel" inputMode="tel" />
             </div>
-            <Field label="Email" name="email" type="email" autoComplete="email" spellCheck={false} />
+            <Field
+              label="Email"
+              name="email"
+              type="email"
+              autoComplete="email"
+              spellCheck={false}
+            />
             <Field label="Vrsta projekta" name="project" autoComplete="off" />
             <div className="relative">
               <textarea
@@ -134,15 +135,13 @@ export function Contact() {
               type="submit"
               disabled={loading}
               data-trace
-              className="w-full group relative inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-8 py-4 font-display text-base transition-smooth disabled:opacity-60"
+              className="button-primary w-full disabled:opacity-60"
             >
-              <TraceOutline />
               {loading ? "Šaljem…" : "Pošalji upit"}
               <Send className="w-4 h-4" />
             </button>
           </div>
         </form>
-
       </div>
     </section>
   );
