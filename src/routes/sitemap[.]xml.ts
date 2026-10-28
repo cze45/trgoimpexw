@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
+import { projects } from "@/data/projects";
+
 const BASE_URL = "https://trgoimpexw.lovable.app";
 
 interface SitemapEntry {
@@ -18,6 +20,11 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/projekti", changefreq: "monthly", priority: "0.8" },
           { path: "/o-nama", changefreq: "yearly", priority: "0.6" },
           { path: "/kontakt", changefreq: "yearly", priority: "0.8" },
+          ...projects.map((project) => ({
+            path: `/projekti/${project.slug}`,
+            changefreq: "monthly" as const,
+            priority: "0.7",
+          })),
           { path: "/privatnost", changefreq: "yearly", priority: "0.3" },
         ];
 

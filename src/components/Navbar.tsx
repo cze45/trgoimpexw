@@ -37,7 +37,15 @@ export function Navbar() {
         </a>
         <nav className="desktop-nav" aria-label="Glavna navigacija">
           {links.map((l) => (
-            <a key={l.href} href={l.href} aria-current={pathname === l.href ? "page" : undefined}>
+            <a
+              key={l.href}
+              href={l.href}
+              aria-current={
+                pathname === l.href || (l.href === "/projekti" && pathname.startsWith("/projekti/"))
+                  ? "page"
+                  : undefined
+              }
+            >
               {l.label}
             </a>
           ))}
@@ -64,7 +72,11 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              aria-current={pathname === l.href ? "page" : undefined}
+              aria-current={
+                pathname === l.href || (l.href === "/projekti" && pathname.startsWith("/projekti/"))
+                  ? "page"
+                  : undefined
+              }
               onClick={() => setOpen(false)}
             >
               {l.label}

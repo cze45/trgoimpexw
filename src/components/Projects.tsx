@@ -1,9 +1,6 @@
 import { useEffect, useState } from "react";
 import { ArrowUpRight } from "lucide-react";
-import bridgePhoto from "@/assets/works/asfaltiranje-mosta.webp";
-import steelPhoto from "@/assets/works/celicna-konstrukcija.webp";
-import asphaltPhoto from "@/assets/works/industrijski-plato.webp";
-import fencePhoto from "@/assets/works/zicana-ograda.webp";
+import { projects, type Project } from "@/data/projects";
 import {
   Carousel,
   CarouselContent,
@@ -11,64 +8,35 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-// TODO: zameniti pravim projektima - nazivi, lokacije, obim i godina.
-const projects = [
-  {
-    cat: "Infrastruktura",
-    img: bridgePhoto,
-    alt: "Asfaltiranje kolovoza na mostu sa zaštitnim ogradama",
-    position: "center 60%",
-    title: "Naziv projekta",
-    desc: "Kratak opis radova - lokacija, obim, godina.",
-  },
-  {
-    cat: "Visokogradnja",
-    img: steelPhoto,
-    alt: "Radnici montiraju čeličnu konstrukciju hale",
-    position: "center",
-    title: "Naziv projekta",
-    desc: "Kratak opis radova - lokacija, obim, godina.",
-  },
-  {
-    cat: "Niskogradnja",
-    img: asphaltPhoto,
-    alt: "Asfaltirani industrijski plato između hala sa obeleženim parking mestima",
-    position: "center",
-    title: "Naziv projekta",
-    desc: "Kratak opis radova - lokacija, obim, godina.",
-  },
-  {
-    cat: "Ograđivanje",
-    title: "Žičana ograda",
-    desc: "Žičana mreža na betonskim stubovima sa kosnicima.",
-    img: fencePhoto,
-    alt: "Žičana ograda na betonskim stubovima sa kosnicima i bodljikavom žicom",
-    position: "center 55%",
-  },
-];
-
-type Project = (typeof projects)[number];
-
 function ProjectCard({ p }: { p: Project }) {
   return (
     <article className="project-card">
-      <div className="project-photo">
-        <img
-          src={p.img}
-          alt={p.alt}
-          width={1600}
-          height={1200}
-          loading="lazy"
-          decoding="async"
-          style={{ objectPosition: p.position }}
-        />
-      </div>
-      <div className="project-meta">
-        <span>{p.cat}</span>
-        <ArrowUpRight size={17} aria-hidden="true" />
-      </div>
-      <h3>{p.title}</h3>
-      <p>{p.desc}</p>
+      <a
+        className="project-card-link"
+        href={`/projekti/${p.slug}`}
+        aria-label={`Pročitaj projekat: ${p.title}`}
+      >
+        <div className="project-photo">
+          <img
+            src={p.img}
+            alt={p.alt}
+            width={p.width}
+            height={p.height}
+            loading="lazy"
+            decoding="async"
+            style={{ objectPosition: p.position }}
+          />
+        </div>
+        <div className="project-meta">
+          <span>{p.cat}</span>
+          <ArrowUpRight size={17} aria-hidden="true" />
+        </div>
+        <h3>{p.title}</h3>
+        <p>{p.desc}</p>
+        <span className="project-read-more">
+          Pročitaj opis projekta <ArrowUpRight size={16} aria-hidden="true" />
+        </span>
+      </a>
     </article>
   );
 }
@@ -103,13 +71,13 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
               Odabrani <span className="text-primary">projekti</span>
             </Heading>
             <p className="text-muted-foreground text-lg">
-              Vaši projekti - slike i opisi se dodaju ovde.
+              Pogledajte fotografije radova i pročitajte opis svakog projekta.
             </p>
           </div>
         </div>
 
         {/* Mobilni karusel - prevlačenje, indikatori u Instagram stilu */}
-        <div className="md:hidden">
+        <div className={standalone ? "hidden" : "md:hidden"}>
           <Carousel setApi={setApi} opts={{ align: "start" }}>
             <CarouselContent className="-ml-6">
               {projects.map((p, i) => (
@@ -145,7 +113,13 @@ export function Projects({ standalone = false }: { standalone?: boolean }) {
         </div>
 
         {/* Tablet i desktop - mreža kao ranije */}
-        <div className="hidden md:grid grid-cols-2 gap-x-8 gap-y-12">
+        <div
+          className={
+            standalone
+              ? "grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12"
+              : "hidden md:grid grid-cols-2 gap-x-8 gap-y-12"
+          }
+        >
           {projects.map((p, i) => (
             <ProjectCard key={i} p={p} />
           ))}

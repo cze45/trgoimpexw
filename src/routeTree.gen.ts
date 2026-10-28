@@ -15,6 +15,7 @@ import { Route as PrivatnostRouteImport } from './routes/privatnost'
 import { Route as ONamaRouteImport } from './routes/o-nama'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProjektiSlugRouteImport } from './routes/projekti_.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -46,6 +47,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjektiSlugRoute = ProjektiSlugRouteImport.update({
+  id: '/projekti_/$slug',
+  path: '/projekti/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +60,7 @@ export interface FileRoutesByFullPath {
   '/privatnost': typeof PrivatnostRoute
   '/projekti': typeof ProjektiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/projekti/$slug': typeof ProjektiSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +69,7 @@ export interface FileRoutesByTo {
   '/privatnost': typeof PrivatnostRoute
   '/projekti': typeof ProjektiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/projekti/$slug': typeof ProjektiSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,14 +79,27 @@ export interface FileRoutesById {
   '/privatnost': typeof PrivatnostRoute
   '/projekti': typeof ProjektiRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/projekti_/$slug': typeof ProjektiSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/kontakt' | '/o-nama' | '/privatnost' | '/projekti' | '/sitemap.xml'
+    | '/'
+    | '/kontakt'
+    | '/o-nama'
+    | '/privatnost'
+    | '/projekti'
+    | '/sitemap.xml'
+    | '/projekti/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/kontakt' | '/o-nama' | '/privatnost' | '/projekti' | '/sitemap.xml'
+    | '/'
+    | '/kontakt'
+    | '/o-nama'
+    | '/privatnost'
+    | '/projekti'
+    | '/sitemap.xml'
+    | '/projekti/$slug'
   id:
     | '__root__'
     | '/'
@@ -87,6 +108,7 @@ export interface FileRouteTypes {
     | '/privatnost'
     | '/projekti'
     | '/sitemap.xml'
+    | '/projekti_/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -96,6 +118,7 @@ export interface RootRouteChildren {
   PrivatnostRoute: typeof PrivatnostRoute
   ProjektiRoute: typeof ProjektiRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ProjektiSlugRoute: typeof ProjektiSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -142,6 +165,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projekti_/$slug': {
+      id: '/projekti_/$slug'
+      path: '/projekti/$slug'
+      fullPath: '/projekti/$slug'
+      preLoaderRoute: typeof ProjektiSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -152,6 +182,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivatnostRoute: PrivatnostRoute,
   ProjektiRoute: ProjektiRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ProjektiSlugRoute: ProjektiSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
