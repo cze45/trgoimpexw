@@ -756,3 +756,16 @@
     aspect-ratio: 4 / 3;
   }
 }
+
+.standalone-page {
+  min-height: calc(100svh - 190px);
+}
+.standalone-page > section {
+  min-height: inherit;
+}
+.desktop-nav a[aria-current="page"],
+.mobile-nav a[aria-current="page"] {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  font-weight: 600;
+}

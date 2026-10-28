@@ -4,7 +4,8 @@ import { useServerFn } from "@tanstack/react-start";
 import { toast } from "sonner";
 import { submitContactMessage } from "@/lib/contact.functions";
 
-export function Contact() {
+export function Contact({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   const [loading, setLoading] = useState(false);
   const send = useServerFn(submitContactMessage);
 
@@ -45,11 +46,11 @@ export function Contact() {
     >
       <div className="container grid md:grid-cols-2 gap-12 md:gap-16">
         <div>
-          <h2 className="section-title mb-6">
+          <Heading className="section-title mb-6">
             Imate <span className="text-inherit">projekat</span>?
             <br />
             Razgovarajmo.
-          </h2>
+          </Heading>
           <p className="text-secondary-foreground/80 text-lg mb-12 max-w-md">
             Pošaljite nam upit ili nas kontaktirajte direktno. Odgovaramo u roku od 24 sata radnim
             danom.

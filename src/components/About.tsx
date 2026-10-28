@@ -8,7 +8,8 @@ const points = [
   "Stroge mere zaštite na radu",
 ];
 
-export function About() {
+export function About({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   return (
     <section id="o-nama" className="section-space bg-background about-section">
       <div className="container grid md:grid-cols-2 gap-12 md:gap-16 items-center">
@@ -26,9 +27,9 @@ export function About() {
         </div>
 
         <div>
-          <h2 className="section-title mb-6">
+          <Heading className="section-title mb-6">
             Više od <span className="text-primary">25 godina</span> na terenu.
-          </h2>
+          </Heading>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             Trgoimpex W je porodična građevinska firma iz Novog Sada. Radimo niskogradnju,
             ograđivanje i asfaltiranje. Tim čine inženjeri, majstori i operativci sa decenijskim
@@ -47,7 +48,7 @@ export function About() {
             ))}
           </ul>
 
-          <a href="#kontakt" data-trace className="button-primary mt-8">
+          <a href="/kontakt" data-trace className="button-primary mt-8">
             Zatražite ponudu
             <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>

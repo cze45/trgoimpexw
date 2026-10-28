@@ -27,10 +27,10 @@ export function Hero() {
               </span>
             </h1>
             <div className="hero-actions">
-              <a href="#kontakt" className="button-primary">
+              <a href="/kontakt" className="button-primary">
                 Zatražite ponudu <ArrowRight size={19} />
               </a>
-              <a href="#projekti" className="text-link">
+              <a href="/projekti" className="text-link">
                 Naši projekti <ArrowDownRight size={19} />
               </a>
             </div>

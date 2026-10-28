@@ -73,7 +73,8 @@ function ProjectCard({ p }: { p: Project }) {
   );
 }
 
-export function Projects() {
+export function Projects({ standalone = false }: { standalone?: boolean }) {
+  const Heading = standalone ? "h1" : "h2";
   const [api, setApi] = useState<CarouselApi>();
   const [count, setCount] = useState(0);
   const [current, setCurrent] = useState(0);
@@ -98,9 +99,9 @@ export function Projects() {
       <div className="container">
         <div className="flex flex-wrap items-end justify-between mb-12 md:mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="section-title mb-4">
+            <Heading className="section-title mb-4">
               Odabrani <span className="text-primary">projekti</span>
-            </h2>
+            </Heading>
             <p className="text-muted-foreground text-lg">
               Vaši projekti - slike i opisi se dodaju ovde.
             </p>

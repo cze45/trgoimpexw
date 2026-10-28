@@ -1,14 +1,18 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { Brand } from "./Brand";
 const links = [
-  { href: "/#pocetna", label: "Početna" },
+  { href: "/", label: "Početna" },
   { href: "/#usluge", label: "Usluge" },
-  { href: "/#projekti", label: "Projekti" },
-  { href: "/#o-nama", label: "O nama" },
-  { href: "/#kontakt", label: "Kontakt" },
+  { href: "/projekti", label: "Projekti" },
+  { href: "/o-nama", label: "O nama" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 export function Navbar() {
+  const pathname = useLocation({
+    select: (location) => location.pathname.replace(/\/$/, "") || "/",
+  });
   const [open, setOpen] = useState(false);
   useEffect(() => {
     const close = (e: KeyboardEvent) => {
@@ -33,7 +37,7 @@ export function Navbar() {
         </a>
         <nav className="desktop-nav" aria-label="Glavna navigacija">
           {links.map((l) => (
-            <a key={l.href} href={l.href}>
+            <a key={l.href} href={l.href} aria-current={pathname === l.href ? "page" : undefined}>
               {l.label}
             </a>
           ))}
@@ -57,7 +61,12 @@ export function Navbar() {
       >
         <div className="container">
           {links.map((l) => (
-            <a key={l.href} href={l.href} onClick={() => setOpen(false)}>
+            <a
+              key={l.href}
+              href={l.href}
+              aria-current={pathname === l.href ? "page" : undefined}
+              onClick={() => setOpen(false)}
+            >
               {l.label}
             </a>
           ))}
