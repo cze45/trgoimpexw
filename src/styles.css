@@ -1247,3 +1247,47 @@
 .project-slider-controls {
   justify-content: center;
 }
+
+/* Let the opening photograph continue behind the homepage navigation. */
+.site-header-home {
+  position: fixed;
+  inset: 0 0 auto;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.site-header-over-photo {
+  background: transparent;
+  border-bottom-color: transparent;
+  color: #fefefe;
+}
+.site-header-over-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -32px;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgb(13 25 36 / 65%), rgb(13 25 36 / 0%));
+}
+.site-header-over-photo .desktop-nav a:last-child,
+.site-header-over-photo .desktop-nav a:hover {
+  color: #fefefe;
+}
+.site-header-over-photo .desktop-nav a:hover,
+.site-header-over-photo .desktop-nav a[aria-current="page"] {
+  color: #fefefe;
+  border-bottom-color: #fefefe;
+}
+.site-header-over-photo .menu-toggle {
+  color: #fefefe;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+.site-header-home ~ main .hero {
+  min-height: 100svh;
+  padding-top: 184px;
+}
+@media (max-width: 767px) {
+  .site-header-home ~ main .hero {
+    min-height: 0;
+    padding-top: 120px;
+  }
+}

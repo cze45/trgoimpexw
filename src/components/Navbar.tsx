@@ -14,6 +14,15 @@ export function Navbar() {
     select: (location) => location.pathname.replace(/\/$/, "") || "/",
   });
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const home = pathname === "/";
+  const overPhoto = home && !scrolled && !open;
+  useEffect(() => {
+    const update = () => setScrolled(window.scrollY > 32);
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    return () => window.removeEventListener("scroll", update);
+  }, []);
   useEffect(() => {
     const close = (e: KeyboardEvent) => {
       if (e.key === "Escape") setOpen(false);
@@ -30,10 +39,10 @@ export function Navbar() {
     };
   }, []);
   return (
-    <header className="site-header">
+    <header className={`site-header${home ? " site-header-home" : ""}${overPhoto ? " site-header-over-photo" : ""}`}>
       <div className="container nav-inner">
         <a href="/" aria-label="Trgoimpex W - početna strana">
-          <Brand />
+          <Brand inverse={overPhoto} />
         </a>
         <nav className="desktop-nav" aria-label="Glavna navigacija">
           {links.map((l) => (
